@@ -1,0 +1,17 @@
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+.DS_Store
+
+# Build
+build/
+DerivedData/
+
+# Swift Package Manager
+.swiftpm/
+Packages/
