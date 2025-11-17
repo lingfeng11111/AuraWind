@@ -1,7 +1,7 @@
 # AuraWind 开发日志
 
 ## 项目概述
-
+这是一个开发失败的项目💔💔💔
 AuraWind 是一个 macOS 风扇控制应用，旨在通过读取 SMC (System Management Controller) 数据来监控 Mac 的温度和风扇状态，并提供自定义风扇控制功能。
 
 **开发时间**: 2025年11月  
