@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>ApplicationDescription</key>
+    <string>Macs Fan Control allows user to change fan speed and does real-time temperature sensors monitoring.</string>
+    <key>Connections</key>
+    <array>
+        <dict>
+            <key>IsIncoming</key>
+            <false/>
+            <key>Host</key>
+            <string>crystalidea.com</string>
+            <key>NetworkProtocol</key>
+            <string>TCP</string>
+            <key>Port</key>
+            <string>443</string>
+            <key>Relevance</key>
+            <string>Essential</string>
+            <key>Purpose</key>
+            <string>Macs Fan Control periodically checks for software updates. You can disable automatic software update checks in the app's Preferences > General.</string>
+            <key>DenyConsequences</key>
+            <string>If you deny this connection, Macs Fan Control will not be able to tell you when a new version of the app is released.</string>
+        </dict>
+        <dict>
+            <key>IsIncoming</key>
+            <false/>
+            <key>Host</key>
+            <string>crystalidea.license-manage.com</string>
+            <key>NetworkProtocol</key>
+            <string>TCP</string>
+            <key>Port</key>
+            <string>443</string>
+            <key>Relevance</key>
+            <string>Essential</string>
+            <key>Purpose</key>
+            <string>Macs Fan Control Pro version performs this connection to correctly validate its license. No personal information is being sent.</string>
+            <key>DenyConsequences</key>
+            <string>If you deny this connection, Macs Fan Control will not be able to validate its license resulting Pro features may not work on your computer.</string>
+        </dict>
+    </array>
+</dict>
+</plist>

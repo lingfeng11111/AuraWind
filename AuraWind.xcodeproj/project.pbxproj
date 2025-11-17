@@ -6,33 +6,140 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		168B6E842ECB4682003A1B60 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168B6E832ECB4682003A1B60 /* IOKit.framework */; };
+		168B6E862ECB468E003A1B60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168B6E852ECB468E003A1B60 /* Security.framework */; };
+		168B6E882ECB46A0003A1B60 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168B6E872ECB46A0003A1B60 /* ServiceManagement.framework */; };
+		168B6E892ECB4714003A1B60 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168B6E872ECB46A0003A1B60 /* ServiceManagement.framework */; };
+		168B6E8A2ECB471D003A1B60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168B6E852ECB468E003A1B60 /* Security.framework */; };
+		168B6E8B2ECB4726003A1B60 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168B6E832ECB4682003A1B60 /* IOKit.framework */; };
+		168B6E932ECB4DF7003A1B60 /* com.aurawind.AuraWind.SMCHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 168B6E732ECB4116003A1B60 /* com.aurawind.AuraWind.SMCHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		168B6E902ECB4DAA003A1B60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 168F562B2ECA014200BD0B16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 168B6E722ECB4116003A1B60;
+			remoteInfo = SMCHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		168B6E712ECB4116003A1B60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		168B6E922ECB4DC7003A1B60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				168B6E932ECB4DF7003A1B60 /* com.aurawind.AuraWind.SMCHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		168B6E732ECB4116003A1B60 /* com.aurawind.AuraWind.SMCHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.aurawind.AuraWind.SMCHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		168B6E832ECB4682003A1B60 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		168B6E852ECB468E003A1B60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		168B6E872ECB46A0003A1B60 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		168F56332ECA014200BD0B16 /* AuraWind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraWind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		168B6E7D2ECB41C0003A1B60 /* Exceptions for "AuraWind" folder in "SMCHelper" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/AuraWindError.swift,
+				Services/HelperTool/HelperToolProtocol.swift,
+				Services/SMCConnection.swift,
+			);
+			target = 168B6E722ECB4116003A1B60 /* SMCHelper */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		168B6E8F2ECB4955003A1B60 /* Exceptions for "SMCHelper" folder in "Copy Files" phase from "SMCHelper" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				Launchd.plist = (CodeSignOnCopy, );
+			};
+			buildPhase = 168B6E712ECB4116003A1B60 /* CopyFiles */;
+			membershipExceptions = (
+				Launchd.plist,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		168B6E742ECB4116003A1B60 /* SMCHelper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				168B6E8F2ECB4955003A1B60 /* Exceptions for "SMCHelper" folder in "Copy Files" phase from "SMCHelper" target */,
+			);
+			path = SMCHelper;
+			sourceTree = "<group>";
+		};
 		168F56352ECA014200BD0B16 /* AuraWind */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				168B6E7D2ECB41C0003A1B60 /* Exceptions for "AuraWind" folder in "SMCHelper" target */,
+			);
 			path = AuraWind;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		168B6E702ECB4116003A1B60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168B6E882ECB46A0003A1B60 /* ServiceManagement.framework in Frameworks */,
+				168B6E862ECB468E003A1B60 /* Security.framework in Frameworks */,
+				168B6E842ECB4682003A1B60 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		168F56302ECA014200BD0B16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168B6E8B2ECB4726003A1B60 /* IOKit.framework in Frameworks */,
+				168B6E8A2ECB471D003A1B60 /* Security.framework in Frameworks */,
+				168B6E892ECB4714003A1B60 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		168B6E822ECB4682003A1B60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				168B6E872ECB46A0003A1B60 /* ServiceManagement.framework */,
+				168B6E852ECB468E003A1B60 /* Security.framework */,
+				168B6E832ECB4682003A1B60 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		168F562A2ECA014200BD0B16 = {
 			isa = PBXGroup;
 			children = (
 				168F56352ECA014200BD0B16 /* AuraWind */,
+				168B6E742ECB4116003A1B60 /* SMCHelper */,
+				168B6E822ECB4682003A1B60 /* Frameworks */,
 				168F56342ECA014200BD0B16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				168F56332ECA014200BD0B16 /* AuraWind.app */,
+				168B6E732ECB4116003A1B60 /* com.aurawind.AuraWind.SMCHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +156,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		168B6E722ECB4116003A1B60 /* SMCHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168B6E792ECB4116003A1B60 /* Build configuration list for PBXNativeTarget "SMCHelper" */;
+			buildPhases = (
+				168B6E6F2ECB4116003A1B60 /* Sources */,
+				168B6E702ECB4116003A1B60 /* Frameworks */,
+				168B6E712ECB4116003A1B60 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				168B6E742ECB4116003A1B60 /* SMCHelper */,
+			);
+			name = SMCHelper;
+			packageProductDependencies = (
+			);
+			productName = SMCHelper;
+			productReference = 168B6E732ECB4116003A1B60 /* com.aurawind.AuraWind.SMCHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 		168F56322ECA014200BD0B16 /* AuraWind */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 168F563E2ECA014300BD0B16 /* Build configuration list for PBXNativeTarget "AuraWind" */;
@@ -55,10 +185,12 @@
 				168F562F2ECA014200BD0B16 /* Sources */,
 				168F56302ECA014200BD0B16 /* Frameworks */,
 				168F56312ECA014200BD0B16 /* Resources */,
+				168B6E922ECB4DC7003A1B60 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				168B6E912ECB4DAA003A1B60 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				168F56352ECA014200BD0B16 /* AuraWind */,
@@ -80,6 +212,9 @@
 				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
+					168B6E722ECB4116003A1B60 = {
+						CreatedOnToolsVersion = 26.1;
+					};
 					168F56322ECA014200BD0B16 = {
 						CreatedOnToolsVersion = 26.1;
 					};
@@ -100,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				168F56322ECA014200BD0B16 /* AuraWind */,
+				168B6E722ECB4116003A1B60 /* SMCHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -115,6 +251,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		168B6E6F2ECB4116003A1B60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		168F562F2ECA014200BD0B16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +267,47 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		168B6E912ECB4DAA003A1B60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 168B6E722ECB4116003A1B60 /* SMCHelper */;
+			targetProxy = 168B6E902ECB4DAA003A1B60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		168B6E772ECB4116003A1B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: 3374080053@qq.com (74R935FK49)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C82H85XBX7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INSTALL_PATH = "$(CONTENTS_FOLDER_PATH)/Library/LaunchServices";
+				PRODUCT_NAME = com.aurawind.AuraWind.SMCHelper;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		168B6E782ECB4116003A1B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: 3374080053@qq.com (74R935FK49)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C82H85XBX7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INSTALL_PATH = "$(CONTENTS_FOLDER_PATH)/Library/LaunchServices";
+				PRODUCT_NAME = com.aurawind.AuraWind.SMCHelper;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		168F563C2ECA014300BD0B16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +489,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		168B6E792ECB4116003A1B60 /* Build configuration list for PBXNativeTarget "SMCHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168B6E772ECB4116003A1B60 /* Debug */,
+				168B6E782ECB4116003A1B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		168F562E2ECA014200BD0B16 /* Build configuration list for PBXProject "AuraWind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

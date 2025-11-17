@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.13" Author="OREKASEP - Thanh TRAN CONG, sorae_42 (skyventuree)">
+    <MainWindow>
+        <staticSensorsListHeader>Cảm biến nhiệt độ:</staticSensorsListHeader>
+        <listColumnFan>Quạt</listColumnFan>
+        <listColumnRPM>Nhỏ nhất/Hiện tại/Lớn nhất</listColumnRPM>
+        <listColumnControl>Điều khiển</listColumnControl>
+        <listColumnSensor>Cảm biến</listColumnSensor>
+        <listColumnSensorValue>Giá trị</listColumnSensorValue>
+        <listSeparatorDrives>Ổ đĩa:</listSeparatorDrives>
+        <popupMenuItemControl>Thay đổi điều khiển...</popupMenuItemControl>
+        <popupMenuItemReset>Chuyển chế độ tự điều khiển</popupMenuItemReset>
+        <fanControlAutomatic>Tự động</fanControlAutomatic>
+        <fanControlAutomaticInfo>Tự động (điều khiển bởi hệ thống)</fanControlAutomaticInfo>
+        <fanControlConstant>Cố định giá trị %1</fanControlConstant>
+        <fanControlSensor>Dựa theo %1</fanControlSensor>
+        <fanControlUnknown>Không rõ!</fanControlUnknown>
+        <buttonFanControlCustom>Tùy chỉnh...</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>Tùy chỉnh chế độ điều khiển</buttonFanControlCustomInfo>
+        <buttonMinimize>Thu nhỏ</buttonMinimize>
+        <buttonMinimizeMac>Ẩn trên thanh công cụ</buttonMinimizeMac>
+        <buttonPreferences>Tùy chọn...</buttonPreferences>
+        <buttonAbout>Giới thiệu...</buttonAbout>
+        <messageHelperToolInstall>Macs Fan Control yêu cầu công cụ giúp đỡ được cài cho việc điều khiển quạt. Bạn có thể bỏ qua nếu bạn chỉ muốn kiểm tra quạt &amp; nhiệt độ cảm biến.</messageHelperToolInstall>
+        <messageHelperToolUpgrade>Macs Fan Control cần phải cài đặt phiên bản mới hơn của công cụ giúp đỡ cho việc điều khiển quạt.</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>Không thể hỗ trợ điều khiển quạt</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>Macs Fan Control không thể kết nối tới công cụ hỗ trợ để bật chức năng điều khiển quạt cũng như chỉnh tốc độ. \n\nHãy điền mật khẩu quản trị khi được hỏi.\n\nBạn vẫn có thể sử dụng app trong chế độ chỉ kiểm tra.</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>Chỉ được kiểm tra</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>Không nhận dạng được quạt nào, hãy thử [đặt lại SMC](https://support.apple.com/vi-vn/HT201295)</messageNoFansDetected>
+        <messageNoFansAvailable>Máy tính này không có quạt và được làm mát một cách thụ động.</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>Điều khiển quạt cho %1</title>
+        <radioConstant>Giá trị cố định Vòng/Phút</radioConstant>
+        <radioSensor>Giá trị theo cảm biến</radioSensor>
+        <staticIncrease>Nhiệt độ quạt bắt đầu tăng từ:</staticIncrease>
+        <staticMax>Nhiệt độ lớn nhất:</staticMax>
+        <statusWarning>Có sai sót - giá trị quạt lớn nhất/nhỏ nhất bằng nhau (%1).&lt;br/&gt; Hãy đảm bảo xóa những ứng dụng điều khiển quạt khác và khởi động lại ứng dụng.</statusWarning>
+        <saveToCurrentPreset>Lưu vào preset hiện tại ('%1')</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>Preset đang hoạt động:</activePresetLabel>
+        <presetAutomatic>Tự động</presetAutomatic>
+        <presetFullBlast>Cực mạnh</presetFullBlast>
+        <presetCurrentUnsaved>Tuỳ chỉnh*</presetCurrentUnsaved>
+        <presetMenuSave>Lưu...</presetMenuSave>
+        <presetMenuRename>Đổi tên</presetMenuRename>
+        <presetMenuDelete>Xoá</presetMenuDelete>
+        <presetMenuPredefined>Presets định trước:</presetMenuPredefined>
+        <presetMenuCustom>Presets tuỳ chỉnh:</presetMenuCustom>
+        <presetMenuApply>Áp dụng</presetMenuApply>
+        <presetMenuProVersion>Chỉ có ở phiên bản PRO</presetMenuProVersion>
+        <presetMenuCurrent>Preset - %1</presetMenuCurrent>
+        <presetMenuDiscard>Huỷ bỏ (đặt lại quạt về tự động)</presetMenuDiscard>
+        <labelPresetName>Tên preset:</labelPresetName>
+        <savePresetTitle>Lưu preset tuỳ chỉnh</savePresetTitle>
+        <editPresetTitle>Sửa tên preset</editPresetTitle>
+        <presetCreateNew>Mới...</presetCreateNew>
+        <presetCreateNewTitle>Tạo preset mới</presetCreateNewTitle>
+        <presetCreateNewMessage>Tất cả các quạt của bạn đang được điều khiển bởi hệ thống. \n\nHãy thay đổi điều khiển thành Tuỳ chỉnh cho ít nhất một chiếc quạt để có thể tạo một preset mới.</presetCreateNewMessage>
+        <presetCreateNewMessage2>Hãy đổi điều khiển cho ít nhất một chiếc quạt của bạn, vì chúng nó đang thổi luồng dựa trên preset '%1' có sẵn.</presetCreateNewMessage2>
+        <presetCreateNewButton>Tuỳ chỉnh điều khiển cho quạt '%1'</presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>Nâng cấp lên Macs Fan Control Pro</title>
+        <proInfo1>Phiên bản Pro có thể tạo và lưu preset tuỳ chỉnh để bạn có thể chuyển nhanh các preset dựa trên hoạt động của bạn.</proInfo1>
+        <proInfo2>Nếu bạn đã mua ứng dụng, hãy bấm nút 'Nhập giấy phép' ở dưới.</proInfo2>
+        <buttonPurchase>Mua</buttonPurchase>
+        <buttonEnterLicense>Nhập giấy phép</buttonEnterLicense>
+        <buttonLater>Để sau</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>Mở khoá phiên bản Pro</title>
+        <infoText>Nếu bạn đã mua Macs Fan Control, hãy nhập địa chỉ email và mã giấy phép từ hoá đơn trong email của bạn vào hộp dưới đây. Việc này sẽ mở khoá toàn bộ chức năng của Macs Fan Control.</infoText>
+        <licenseVerifyInfo>Thông tin bạn nhập có thể được xác nhận qua Internet.</licenseVerifyInfo>
+        <email>Địa chỉ Email</email>
+        <licenseKey>Mã giấy phép</licenseKey>
+        <buttonUnlock>Mở khoá</buttonUnlock>
+        <buttonRestoreLicense>Phục hồi Giấy phép</buttonRestoreLicense>
+        <invalidLicenseTitle>Giấy phép không hợp lệ!</invalidLicenseTitle>
+        <invalidLicenseText>Chắc chắn rằng tất cả chữ, số và dấu gạch ngang đã nhập theo đúng thứ tự. Nếu bạn đang cố nhập số bằng tay, hãy thử sao chép và dán nó từ trong hoá đơn email của bạn.</invalidLicenseText>
+        <invalidLicenseMismatchOS>Giấy phép này hợp lệ nhưng không phù hợp để dùng trên %1.</invalidLicenseMismatchOS>
+        <thanksTitle>Cảm ơn bạn đã mua Macs Fan Control Pro</thanksTitle>
+        <thanksInfo>Tất cả giới hạn của Phiên bản miễn phí đã được gỡ bỏ, chúng tôi mong bạn sẽ thích sử dụng ứng dụng này!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Trial version</trialVersion>
+        <message>Thank you for trying %1</message>
+        <messageSecondary>The only app able to control fans on Intel-based Macs in Windows</messageSecondary>
+        <timeLeftDays>You have %1 days remaining of your trial period.</timeLeftDays>
+        <timeLeftHours>You have %1 hours remaining of your trial period.</timeLeftHours>
+        <trialOver>The trial of %1 days is over.</trialOver>
+        <buttonContinue>Continue Trial</buttonContinue>
+        <buttonActivate>Activate License</buttonActivate>
+        <buttonBuy>Buy Now</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>Hiện Macs Fan Control</itemShow>
+        <itemAvailableFans>Quạt:</itemAvailableFans>
+        <itemFanPresets>Preset quạt:</itemFanPresets>
+        <itemMoreLinks>Xem thêm</itemMoreLinks>
+        <itemWebsite>Website</itemWebsite>
+        <itemCheckForUpdates>Kiểm tra cập nhật...</itemCheckForUpdates>
+        <itemTechInfoZip>Tạo tệp zip kỹ thuật...</itemTechInfoZip>
+        <itemRateApp>Đánh giá trên MacUpdate</itemRateApp>
+        <itemFollowTwitter>Theo dõi @crystalidea</itemFollowTwitter>
+        <itemUninstall>Gỡ bỏ...</itemUninstall>
+        <itemExit>Thoát</itemExit>
+        <itemExitMac>Thoát Macs Fan Control</itemExitMac>
+        <itemSensorBased>Theo cảm biến</itemSensorBased>
+        <itemUpgradeToPro>Nâng cấp lên phiên bản Pro</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>Một gói hỗ trợ '%1' bao gồm dữ liệu kỹ thuật ẩn danh và ảnh chụp màn hính ở cửa sổ chính được tạo ở trên bàn làm việc desktop của bạn.\n\nHãy gửi tệp này tới support@crystalidea.com hoặc đăng lên trang Theo dõi vấn đề trên GitHub của chúng tôi.</message>
+        <browseButton>Hiện tệp zip</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>Tùy chọn</title>
+        <TabGeneral>Tổng quát</TabGeneral>
+        <tabTrayIcon>Hiện trên Tray</tabTrayIcon>
+        <tabSensors>Cảm biến</tabSensors>
+        <tabTrayIconMac>Hiện trên Menubar</tabTrayIconMac>
+        <tabDiagnostics>Phân tích</tabDiagnostics>
+        <staticLanguage>Ngôn ngữ:</staticLanguage>
+        <checkSystemStart>Tự động khởi động ẩn với hệ thống (khuyên dùng)</checkSystemStart>
+        <checkUpdatesOnStartup>Kiểm tra cập nhật khi ứng dụng chạy</checkUpdatesOnStartup>
+        <checkDockIcon>Hiện biểu tượng ở Dock</checkDockIcon>
+        <checkFahrenheit>Sử dụng độ Fahrenheit</checkFahrenheit>
+        <checkPrecise>Hiện phần thập phân của nhiệt độ khi có thể (vd. 45.4)</checkPrecise>
+        <labelSensors>Đọc chỉ số nhiệt của</labelSensors>
+        <checkExternalGPU>eGPUs đã kết nối qua Thunderbolt</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>Cảm biến:</staticSensor>
+        <staticFan>Quạt:</staticFan>
+        <staticIcon>Biểu tượng:</staticIcon>
+        <comboIconOptionShow>Hiển thị (màu)</comboIconOptionShow>
+        <comboIconOptionShowBW>Hiển thị (đen &amp; trắng)</comboIconOptionShowBW>
+        <comboOptionNone>Không</comboOptionNone>
+        <checkTwoLines>Hiện chỉ số quạt/cảm biến trong hai dòng để tiết kiệm khoảng trống</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(Chỉ Độ C)</staticCelsiusOnlyOnWindows>
+        <checkLog>Bật ghi chú (yêu cầu khởi động lại)</checkLog>
+        <browseLog>Duyệt..</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>Giới thiệu Macs Fan Control</title>
+        <staticTechnicalSupport>Hỗ trợ kỹ thuật trên diễn đàn</staticTechnicalSupport>
+        <staticOnlineHelp>Trợ giúp trực tuyến</staticOnlineHelp>
+        <staticFreeVersion>Phiên bản miễn phí</staticFreeVersion>
+        <staticProVersion>Phiên bản Pro, giấy phép %1 máy tính(s)</staticProVersion>
+        <staticWarning>ỨNG DỤNG CHỈ NÊN SỬ DỤNG BỞI NHỮNG NGƯỜI BIẾT SỬ DỤNG SAO CHO KHÔNG LÀM ẢNH HƯỞNG TỚI MÁY MAC CỦA MÌNH.\nTÁC GIẢ ỨNG DỤNG KHÔNG CHỊU TRÁCH NHIỆM TRƯỚC VIỆC MẤT MÁT DỮ LIỆU, HỎNG HÓC HAY BẤT CỨ LOẠI MẤT MÁT NÀO KHI SỬ DỤNG CHƯƠNG TRÌNH</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>Đánh giá ứng dụng trên MacUpdate</message>
+        <informativeText>Nếu bạn hài lòng với %1, xin hãy dành một chút thời gian để đánh giá? Mất không đến một phút đâu. Cảm ơn bạn đã hỗ trợ!</informativeText>
+        <buttonRate>Đánh giá trên MacUpdate</buttonRate>
+        <buttonNoThanks>Không, cảm ơn</buttonNoThanks>
+        <checkDontShowAgain>Không hiện lại nữa</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>Gỡ cài đặt Macs Fan Control?</title>
+        <message>Bạn đang chuẩn bị gỡ cài đặt ứng dụng khỏi máy Mac của bạn bao gồm mục cài đặt, công cụ giúp đỡ và dữ liệu giấy phép cho phiên bản Pro. Tất cả sự sửa đổi đến điểu khiển mặc định của quạt sẽ được phục hồi và (các) quạt sẽ được điểu khiểu tự động bởi hệ thống. \n\nBạn có thể sẽ được hỏi để uỷ quyền ứng dụng để có thể tự gỡ cài đặt. </message>
+        <authorizeText>Vui lòng uỷ quyền cho ứng dụng để có thể gỡ cài đặt công cụ giúp đỡ.</authorizeText>
+        <buttonUninstall>Gỡ cài đặt</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Fans disabled by hardware</title>
+        <message>Due to low temperatures, this Mac model has automatically disabled the fans. Manual fan control will take effect once the system reactivates them, when it determines that cooling is necessary.</message>
+        <checkDiscard>Do not show this message again</checkDiscard>
+        <buttonMoreInfo>More info...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>Đóng</buttonClose>
+        <buttonOK>OK</buttonOK>
+        <buttonCancel>Hủy</buttonCancel>
+        <buttonContinue>Tiếp tục</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>Phát hành ngày %1</ReleasedOn>
+            <CheckForUpdates>Kiểm tra cập nhật...</CheckForUpdates>
+            <NewVersionAvailable>Đã có phiên bản mới %1 !</NewVersionAvailable>
+            <NewVersionAvailableText>%1 %2 đã có - phiên bản hiện tại %3. Bạn có muốn tải ngay không?</NewVersionAvailableText>
+            <UpdateAlertTitle>Cập nhật Ứng dụng</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>Ghi chú phát hành:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>Nhắc nhở sau</UpdateAlertRemindLater>
+            <UpdateAlertSkip>Bỏ qua phiên bản này</UpdateAlertSkip>
+            <UpdateAlertInstall>Cài đặt Cập nhật</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>Kiểm tra cập nhật tự động</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>Bạn đang sử dụng phiên bản mới nhất!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>%1 %2 là phiên bản mới nhất.</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>Có lỗi khi tải bản cập nhật. Hãy thử lại sau..</MessageErrorConnect>
+            <MessageErrorParse>Có lỗi khi tải thông tin cập nhật.</MessageErrorParse>
+            <UpdateProgressTitle>Đang cập nhật %1</UpdateProgressTitle>
+            <UpdateProgressCancel>Hủy</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>Cài đặt và khởi động lại</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>Đang tải cập nhật...</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>Đang giải nén cập nhật...</UpdateProgressExtract>
+            <UpdateProgressStatusReady>Sẵn sàng để cài đặt</UpdateProgressStatusReady>
+            <UpdateProgressSize>%1 / %2</UpdateProgressSize>
+            <UpdateProgressB>B</UpdateProgressB>
+            <UpdateProgressKB>KB</UpdateProgressKB>
+            <UpdateProgressMB>MB</UpdateProgressMB>
+            <UpdateProgressGB>GB</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>Không thể chuyển tới thư mục Applications</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>Chuyển tới Applications</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>Chuyển tới thư mục Applications trong thư mục Home của bạn?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>Bạn có muốn %1 chuyển tới thư mục Applications?</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>Chuyển tới thư mục Applications</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>Không chuyển</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>Hãy chú ý rằng việc này yêu cầu mật khẩu quản trị viên.</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>Việc này sẽ giúp thư mục Downloads không bị lộn xộn.</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>Hoàn tác</actionUndo>
+            <actionRedo>Làm lại</actionRedo>
+            <actionCut>Cắt</actionCut>
+            <actionCopy>Sao chép</actionCopy>
+            <actionPaste>Dán</actionPaste>
+            <actionDelete>Xoá</actionDelete>
+            <actionSelectAll>Chọn tất cả</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>OK</buttonOK>
+            <buttonCancel>Huỷ</buttonCancel>
+            <buttonClose>Đóng</buttonClose>
+            <buttonYes>Có</buttonYes>
+            <buttonNo>Không</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

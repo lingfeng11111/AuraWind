@@ -84,7 +84,7 @@ struct MainView: View {
             }
             
             // 当前温度
-            if let maxTemp = tempViewModel.sensors.max(by: { $0.currentTemperature < $1.currentTemperature }) {
+            if let maxTemp = tempViewModel.sensors.max(by: { $0.currentTemperature < $1.currentTemperature }) as TemperatureSensor? {
                 HStack(spacing: 8) {
                     Image(systemName: "thermometer")
                         .font(.caption)

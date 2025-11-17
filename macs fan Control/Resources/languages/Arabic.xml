@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.13" Author="Samer Sabah-Iraq">
+    <MainWindow>
+        <staticSensorsListHeader>مستشعرات درجة الحرارة:</staticSensorsListHeader>
+        <listColumnFan>المروحه</listColumnFan>
+        <listColumnRPM>اقصى سرعه/السرعه الحاليه/ادنى سرعه</listColumnRPM>
+        <listColumnControl>التحكم</listColumnControl>
+        <listColumnSensor>الحساس</listColumnSensor>
+        <listColumnSensorValue>القيمه</listColumnSensorValue>
+        <listSeparatorDrives>القرص الصلب:</listSeparatorDrives>
+        <popupMenuItemControl>تغيير طريقة التحكم</popupMenuItemControl>
+        <popupMenuItemReset>اعادة طريقة التحكم الى الطريقة الافتراضية</popupMenuItemReset>
+        <fanControlAutomatic>تلقائي</fanControlAutomatic>
+        <fanControlAutomaticInfo>تلقائي(بواسطة النظام)</fanControlAutomaticInfo>
+        <fanControlConstant>قيمة ثابته of %1</fanControlConstant>
+        <fanControlSensor>على أساس %1</fanControlSensor>
+        <fanControlUnknown>غير معروف!</fanControlUnknown>
+        <buttonFanControlCustom>مخصص…</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>حدد نمط خاص للتحكم</buttonFanControlCustomInfo>
+        <buttonMinimize>تصغير</buttonMinimize>
+        <buttonMinimizeMac>اخفاء الى شريط القائمة</buttonMinimizeMac>
+        <buttonPreferences>التفضيلات</buttonPreferences>
+        <buttonAbout>حول…</buttonAbout>
+        <messageHelperToolInstall>التطبيق يحتاج تثبيت اداة مساعدة للتحكم في المروحة. يمكنك تخطي هذا إذا كنت ترغب في مراقبة المراوح &amp; حساسات درجة الحرارة.</messageHelperToolInstall>
+        <messageHelperToolUpgrade>يحتاج البرنامج إلى تثبيت إصدار محدث من أداة المساعدة المستخدمة للتحكم في المروحة.</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>التطبيق غير متاح</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>البرنامج غير قادر على الاتصال بالتطبيق المساعد لتمكينه بالشكل الصحيح للتحكم بالسرعات. \n\تأكد من ادخال كلمة سر المدير عند الطلب.\n\nلا يزال بإمكانك استخدام التطبيق في وضع المراقبة فقط.</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>وضع المراقبة فقط</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>لا مراوح مكتشفة, رجاءاً قم بعمل [reset SMC](https://support.apple.com/ar-ae/HT201295)</messageNoFansDetected>
+        <messageNoFansAvailable>لا يحتوي هذا الكمبيوتر على أي مراوح ويتم تبريده بشكل طبيعي</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>ضبط المروحة</title>
+        <radioConstant>مقدار ثابت لعدد دورات المروحة</radioConstant>
+        <radioSensor>حسب حساس درجة الحرارة</radioSensor>
+        <staticIncrease>درجة الحرارة التي منها تبدأ المروحة زيادة سرعتها:</staticIncrease>
+        <staticMax>درجة الحرارة القصوى:</staticMax>
+        <statusWarning>خطأ ما - دنيا/قصوى قيمة المروحة على حد سواء (%1).&lt;br/&gt; رجاءا تأكد من حذف اي برنامج آخر يتحكم بالمروحه او حاول ان تعمل reset SMC.</statusWarning>
+        <saveToCurrentPreset>حفظ الى الاعداد الحالي ('%1')</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>الاصدار الفعال:</activePresetLabel>
+        <presetAutomatic>تلقائي</presetAutomatic>
+        <presetFullBlast>السرعه القصوى</presetFullBlast>
+        <presetCurrentUnsaved>مخصص*</presetCurrentUnsaved>
+        <presetMenuSave>حفظ...</presetMenuSave>
+        <presetMenuRename>إعادة تسمية</presetMenuRename>
+        <presetMenuDelete>حذف</presetMenuDelete>
+        <presetMenuPredefined>الاعدادات المسبقة:</presetMenuPredefined>
+        <presetMenuCustom>اعدادات مخصصة:</presetMenuCustom>
+        <presetMenuApply>تطبيق</presetMenuApply>
+        <presetMenuProVersion>متاح في الاصدار البرو</presetMenuProVersion>
+        <presetMenuCurrent>حالي - %1</presetMenuCurrent>
+        <presetMenuDiscard>إلغاء (إعادة تعيين سرع المراوح الى السرعة التلقائية)</presetMenuDiscard>
+        <labelPresetName>الاسم الحالي:</labelPresetName>
+        <savePresetTitle>حفظ الاعداد الحالي</savePresetTitle>
+        <editPresetTitle>تعديل اسم الاعداد</editPresetTitle>
+        <presetCreateNew>جديد</presetCreateNew>
+        <presetCreateNewTitle>قم بإنشاء إعداد مسبق جديد</presetCreateNewTitle>
+        <presetCreateNewMessage>يتحكم النظام حاليًا في جميع المراوح. \n\nالرجاء تغيير التحكم إلى مخصص على الأقل لواحدة من المراوح ليتمكن من إنشاء إعداد مسبق جديد.</presetCreateNewMessage>
+        <presetCreateNewMessage2>الرجاء تغيير التحكم لواحد على الأقل من المراوح لديك ، لأنهم جميعًا يقومون حاليًا بتدوير كامل يطابق الإعداد المسبق الموجود '٪ 1'.</presetCreateNewMessage2>
+        <presetCreateNewButton>اعداد مخصص ل '%1' مروحة</presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>الترقية الى الاصدار الاحترافي</title>
+        <proInfo1>إصدار المحترفين قادر على إنشاء وحفظ الإعدادات المسبقة للمروحة المخصصة بحيث يمكنك التبديل بينها بسرعة حسب نشاطك.</proInfo1>
+        <proInfo2>إذا كنت قد اشتريت التطبيق بالفعل ، فالرجاء الضغط على الزر "إدخال ترخيص" أدناه.</proInfo2>
+        <buttonPurchase>شراء</buttonPurchase>
+        <buttonEnterLicense>إدخال الترخيص</buttonEnterLicense>
+        <buttonLater>فيما بعد</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>فتح نسخة برو</title>
+        <infoText>إذا كنت قد قمت بالفعل بشراء Macs Fan Control ، فأدخل عنوان البريد الإلكتروني ومفتاح الترخيص من إيصال البريد الإلكتروني الخاص بك في المربعات أدناه. سيؤدي هذا إلى إلغاء قفل ميزات Pro للتحكم في أجهزة Mac.</infoText>
+        <licenseVerifyInfo>المعلومات التي تدخلها عبر الإنترنت ربما يتم التحقق منها عبر الانترنت.</licenseVerifyInfo>
+        <email>البريد الالكتروني</email>
+        <licenseKey>مفتاح الترخيص</licenseKey>
+        <buttonUnlock>فتح</buttonUnlock>
+        <buttonRestoreLicense>استعادة الرخصة</buttonRestoreLicense>
+        <invalidLicenseTitle>رخصة خاطئة!</invalidLicenseTitle>
+        <invalidLicenseText>تأكد من إدخال جميع الحروف والأرقام والشرطات بالترتيب الصحيح. إذا كنت تكتب الرقم باليد ، فحاول نسخها ولصقها من إيصال البريد الإلكتروني بدلاً من ذلك.</invalidLicenseText>
+        <invalidLicenseMismatchOS>مفتاح الترخيص هذا صالح ولكنه غير مخصص للاستخدام عليه %1.</invalidLicenseMismatchOS>
+        <thanksTitle>شكراً لشرائك البرنامج</thanksTitle>
+        <thanksInfo>تمت إزالة جميع القيود المفروضة على الإصدار المجاني ، نأمل أن تستمتع باستخدام التطبيق!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Trial version</trialVersion>
+        <message>Thank you for trying %1</message>
+        <messageSecondary>The only app able to control fans on Intel-based Macs in Windows</messageSecondary>
+        <timeLeftDays>You have %1 days remaining of your trial period.</timeLeftDays>
+        <timeLeftHours>You have %1 hours remaining of your trial period.</timeLeftHours>
+        <trialOver>The trial of %1 days is over.</trialOver>
+        <buttonContinue>Continue Trial</buttonContinue>
+        <buttonActivate>Activate License</buttonActivate>
+        <buttonBuy>Buy Now</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>اظهار نافذة البرنامج</itemShow>
+        <itemAvailableFans>المراوح:</itemAvailableFans>
+        <itemFanPresets>الإعدادات المسبقة للمروحة:</itemFanPresets>
+        <itemMoreLinks>المزيد</itemMoreLinks>
+        <itemWebsite>الموقع الرسمي</itemWebsite>
+        <itemCheckForUpdates>التحقق من وجود تحديثات...</itemCheckForUpdates>
+        <itemTechInfoZip>إنشاء ملف تقني مضغوط</itemTechInfoZip>
+        <itemRateApp>قيمنا على Macupdate</itemRateApp>
+        <itemFollowTwitter>تابعنا @crystalidea</itemFollowTwitter>
+        <itemUninstall>الغاء التثبيت</itemUninstall>
+        <itemExit>الخروج</itemExit>
+        <itemExitMac>الخروج من البرنامج</itemExitMac>
+        <itemSensorBased>اساس تحكم المستشعر</itemSensorBased>
+        <itemUpgradeToPro>الترقية الى اصدار المحترفين</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>تم إنشاء حزمة دعم تتكون من بيانات فنية مجهولة ولقطة شاشة للإطار الرئيسي على سطح المكتب. الرجاء إرسال هذا الملف إلى support@crystalidea.com أو النشر على GitHub Issue Tracker.</message>
+        <browseButton>عرض الملف المضغوط</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>التفضيلات</title>
+        <TabGeneral>عام</TabGeneral>
+        <tabTrayIcon>ايقونة شريط المهام</tabTrayIcon>
+        <tabSensors>الحساسات</tabSensors>
+        <tabTrayIconMac>عرض ايقونه في شريط القائمة</tabTrayIconMac>
+        <tabDiagnostics>التشخيص</tabDiagnostics>
+        <staticLanguage>اللغه:</staticLanguage>
+        <checkSystemStart>تشغيل تلقائي مع النظام (مستحسن)</checkSystemStart>
+        <checkUpdatesOnStartup>تحقق من وجود تحديثات عند بدء تشغيل التطبيق</checkUpdatesOnStartup>
+        <checkDockIcon>اظهار الايقونة في الشريط</checkDockIcon>
+        <checkFahrenheit>استخدام مقياس درجة حراره فهرنهايت</checkFahrenheit>
+        <checkPrecise>اظهار درجات الحراره الدقيقه والتفصيليه (e.g. 45.4)</checkPrecise>
+        <labelSensors>اقرأ درجات حرارة</labelSensors>
+        <checkExternalGPU>eGPUs متصلة عبر Thunderbolt</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>الحساس:</staticSensor>
+        <staticFan>المروحه:</staticFan>
+        <staticIcon>الايقونه:</staticIcon>
+        <comboIconOptionShow>عرض ملون</comboIconOptionShow>
+        <comboIconOptionShowBW>عرض (اسود &amp; ابيض)</comboIconOptionShowBW>
+        <comboOptionNone>لا شيء</comboOptionNone>
+        <checkTwoLines>عرض قراءات المروحة/الحساس بشكل خطين لتوفير المساحة</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(مئوية فقط)</staticCelsiusOnlyOnWindows>
+        <checkLog>تمكين السجل (مطلوب اعادة التشغيل)</checkLog>
+        <browseLog>استعراض</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>حول البرنامج</title>
+        <staticTechnicalSupport>الدعم الفني على المنتدى</staticTechnicalSupport>
+        <staticOnlineHelp>المساعده على الويب</staticOnlineHelp>
+        <staticFreeVersion>نسخة مجانية</staticFreeVersion>
+        <staticProVersion>اصدار برو, %1 كومبيوتر(s) رخصة</staticProVersion>
+        <staticWarning>هذا البرنامج للمستخدمين المتقدمين الذين يعلمون كيفية استخدام هكذا تطبيقات من دون الحاق الضرر بالماك. مصنعو البرنامج ليسو مسؤولين عن فقدان البيانات، والأضرار أو أية أنواع أخرى من خسائر متصلة مع استخدام أو سوء استخدام للبرنامج‫.‬تحيات معرب البرنامج سامر صباح‫-‬العراق</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>قيم التطبيق على MacUpdate</message>
+        <informativeText>اذا كنت تستخدم %1, ممكن دقيقة من وقتك لتقييمه? لن تأخذ اكثر من دقيقة. شكراً لك على الدعم!</informativeText>
+        <buttonRate>قيم على MacUpdate</buttonRate>
+        <buttonNoThanks>لا ، شكراً</buttonNoThanks>
+        <checkDontShowAgain>لا تظهر هذه الرسالة مرة اخرى</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>هل تريد إلغاء تثبيت Fan Control على أجهزة Mac؟</title>
+        <message>أنت على وشك إلغاء تثبيت التطبيق بالكامل من جهاز Mac الخاص بك بما في ذلك تفضيلاته وأداة مساعد المعجبين وبيانات الترخيص لإصدار Pro. سيتم إرجاع جميع التعديلات التي تم إجراؤها على التحكم الافتراضي في المروحة وسيتم التحكم في المروحة (المراوح) تلقائيًا بواسطة النظام. \ n \ n قد يُطلب منك تخويل التطبيق ليتمكن من إزالة تثبيت نفسه.</message>
+        <authorizeText>يرجى السماح للتطبيق ليتمكن من إلغاء تثبيت أداة مساعد المعجبين.</authorizeText>
+        <buttonUninstall>الغاء تثبيت</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Fans disabled by hardware</title>
+        <message>Due to low temperatures, this Mac model has automatically disabled the fans. Manual fan control will take effect once the system reactivates them, when it determines that cooling is necessary.</message>
+        <checkDiscard>Do not show this message again</checkDiscard>
+        <buttonMoreInfo>More info...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>اغلاق</buttonClose>
+        <buttonOK>موافق</buttonOK>
+        <buttonCancel>الغاء</buttonCancel>
+        <buttonContinue>استمرار</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>تم اصداره في %1</ReleasedOn>
+            <CheckForUpdates>البحث عن تحديثات…</CheckForUpdates>
+            <NewVersionAvailable>هناك اصدار جديد من %1 متاح!</NewVersionAvailable>
+            <NewVersionAvailableText>%1 %2 - اصدارك الآن هو %3. هل تريد تحديثه الآن?</NewVersionAvailableText>
+            <UpdateAlertTitle>تحديث البرنامج</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>ملاحظات الاصدار:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>ذكرني فيما بعد</UpdateAlertRemindLater>
+            <UpdateAlertSkip>تخطى هذا الاصدار</UpdateAlertSkip>
+            <UpdateAlertInstall>تثبيت التحديث</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>التدقيق بحثاً عن التحديثات تلقائياً</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>لديك بالفعل احدث اصدار!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>%1 %2 اصدارك حالياً.</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>حدث خطأ في التحديث ‫..‬ حاول مرة اخرى فيما بعد.</MessageErrorConnect>
+            <MessageErrorParse>حدث خطأ أثناء تحليل التغذية العكسية للتحديث.</MessageErrorParse>
+            <UpdateProgressTitle>جاري التحديث %1</UpdateProgressTitle>
+            <UpdateProgressCancel>إلغاء</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>تثبيت وإعادة تشغيل التطبيق</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>جاري التحديث…</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>يتم فك الضغط…</UpdateProgressExtract>
+            <UpdateProgressStatusReady>جاهز للتثبيت</UpdateProgressStatusReady>
+            <UpdateProgressSize>%1 of %2</UpdateProgressSize>
+            <UpdateProgressB>بايت</UpdateProgressB>
+            <UpdateProgressKB>كيلو بايت</UpdateProgressKB>
+            <UpdateProgressMB>ميگابايت</UpdateProgressMB>
+            <UpdateProgressGB>گيگابايت</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>لا يمكن النقل الى مجلد التطبيقات</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>النقل اى مجلد التطبيقات</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>Home لنقل الى مجلد التطبيقات في مجلد?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>هل تود %1 نقله الى مجلد التطبيقات?</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>انقل الى مجلد التطبيقات</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>لا تنقل</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>لاحظ أن هذا سوف يتطلب كلمة مرور المسؤول.</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>هذا سوف يبقي مجلد التحميل الخاص بك مرتب.</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>تراجع</actionUndo>
+            <actionRedo>تكرار</actionRedo>
+            <actionCut>قص</actionCut>
+            <actionCopy>نسخ</actionCopy>
+            <actionPaste>لصق</actionPaste>
+            <actionDelete>حـف</actionDelete>
+            <actionSelectAll>تحديد الكل</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>موافق</buttonOK>
+            <buttonCancel>الغاء</buttonCancel>
+            <buttonClose>غلق</buttonClose>
+            <buttonYes>نعم</buttonYes>
+            <buttonNo>لا</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

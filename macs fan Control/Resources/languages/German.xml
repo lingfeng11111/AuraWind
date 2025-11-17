@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.17" Author="Gerrit, update by ifeelhorst, Horst Brueckner, Marcus Herbert">
+    <MainWindow>
+        <staticSensorsListHeader>Temperatursensoren:</staticSensorsListHeader>
+        <listColumnFan>Lüfter</listColumnFan>
+        <listColumnRPM>U/min min/momentan/max</listColumnRPM>
+        <listColumnControl>Steuerung</listColumnControl>
+        <listColumnSensor>Sensor</listColumnSensor>
+        <listColumnSensorValue>Wert in</listColumnSensorValue>
+        <listSeparatorDrives>Festplatten:</listSeparatorDrives>
+        <popupMenuItemControl>Steuerung ändern…</popupMenuItemControl>
+        <popupMenuItemReset>Auf automatische Steuerung zurücksetzen</popupMenuItemReset>
+        <fanControlAutomatic>Automatisch</fanControlAutomatic>
+        <fanControlAutomaticInfo>Automatisch (systemgesteuert)</fanControlAutomaticInfo>
+        <fanControlConstant>Konstant mit %1 U/min</fanControlConstant>
+        <fanControlSensor>Basierend auf %1</fanControlSensor>
+        <fanControlUnknown>Unbekannt!</fanControlUnknown>
+        <buttonFanControlCustom>Eigener Wert...</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>Geben Sie den Modus für diesen Lüfter an.</buttonFanControlCustomInfo>
+        <buttonMinimize>Minimieren</buttonMinimize>
+        <buttonMinimizeMac>Fenster ausblenden</buttonMinimizeMac>
+        <buttonPreferences>Einstellungen...</buttonPreferences>
+        <buttonAbout>Über...</buttonAbout>
+        <messageHelperToolInstall>Macs Fan Control erfordert die Installation eines Hilfswerkzeugs zur Lüftersteuerung. Sie können dies überspringen, wenn Sie nur Lüfter &amp; Temperatursensoren überwachen möchten.</messageHelperToolInstall>
+        <messageHelperToolUpgrade>Macs Fan Control muss eine aktualisierte Version des Hilfswerkzeugs für die Lüftersteuerung installieren.</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>Die Lüfter-Steuerung ist nicht verfügbar.</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>Macs Fan Control kann sich nicht mit dem Hilfswerkzeug verbinden, um die Lüfter, sowie deren Geschwindigkeit zu steuern. \n\nGeben Sie Ihr Administrator-Passwort ein, falls Sie danach gefragt werden.\n\nSie können die Anwendung weiterhin im reinen Monitoringmodus verwenden.</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>Nur Überwachung</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>Keine Lüfter erkannt, bitte versuchen Sie es mit [SMC zurücksetzen](https://support.apple.com/de-de/HT201295)</messageNoFansDetected>
+        <messageNoFansAvailable>Dieser Computer hat keine Lüfter und wird passiv gekühlt</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>Steuerung des Lüfters %1</title>
+        <radioConstant>Konstante Drehzahl</radioConstant>
+        <radioSensor>Sensorbasierter Wert</radioSensor>
+        <staticIncrease>Temperatur, ab der die Drehzahl steigen soll:</staticIncrease>
+        <staticMax>Maximale Temperatur:</staticMax>
+        <statusWarning>Etwas ist schiefgelaufen - die minimalen und maximalen Lüfterwerte sind gleich (%1).&lt;br/&gt; Deinstallieren Sie alle anderen Lüftungssteuerungsprogramme und setzen Sie den SMC zurück.</statusWarning>
+        <saveToCurrentPreset>Speichern in der aktuellen Voreinstellung ("%1")</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>Aktive Voreinstellung:</activePresetLabel>
+        <presetAutomatic>Automatisch</presetAutomatic>
+        <presetFullBlast>Volle Leistung</presetFullBlast>
+        <presetCurrentUnsaved>Benutzerdefiniert*</presetCurrentUnsaved>
+        <presetMenuSave>Speichern...</presetMenuSave>
+        <presetMenuRename>Umbenennen</presetMenuRename>
+        <presetMenuDelete>Löschen</presetMenuDelete>
+        <presetMenuPredefined>Vordefinierte Voreinstellungen:</presetMenuPredefined>
+        <presetMenuCustom>Benutzerdefinierte Voreinstellungen:</presetMenuCustom>
+        <presetMenuApply>Anwenden</presetMenuApply>
+        <presetMenuProVersion>Erhältlich in der PRO-Version</presetMenuProVersion>
+        <presetMenuCurrent>Voreinstellung - %1</presetMenuCurrent>
+        <presetMenuDiscard>Verwerfen (alle Lüfter auf Auto zurücksetzen)</presetMenuDiscard>
+        <labelPresetName>Voreingestellter Name:</labelPresetName>
+        <savePresetTitle>Benutzerdefinierte Voreinstellungen speichern</savePresetTitle>
+        <editPresetTitle>Benutzerdefinierte Voreinstellungen bearbeiten</editPresetTitle>
+        <presetCreateNew>Neu...</presetCreateNew>
+        <presetCreateNewTitle>Neue Voreinstellung erstellen</presetCreateNewTitle>
+        <presetCreateNewMessage>Alle Ihre Lüfter werden derzeit durch das System gesteuert. \n\nBitte stellen Sie die Steuerung für mindestens einen Lüfter auf "Benutzerdefiniert" um, damit mindestens ein Lüfter, eine neue Voreinstellung erhalten kann.</presetCreateNewMessage>
+        <presetCreateNewMessage2>Bitte ändern Sie die Steuerung für mindestens einen Ihrer Lüfter, da derzeit alle mit voller Leistung entsprechend der vorhandenen Voreinstellung "%1" laufen.</presetCreateNewMessage2>
+        <presetCreateNewButton>Benutzerdefinierte Steuerung für den "%1"-Lüfter</presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>Upgrade auf Macs Fan Control Pro</title>
+        <proInfo1>Die Pro-Version ist in der Lage, benutzerdefinierte Lüftervoreinstellungen zu erstellen und zu speichern, so dass Sie je nach Aktivität schnell zwischen ihnen wechseln können.</proInfo1>
+        <proInfo2>Wenn Sie die Anwendung bereits gekauft haben, klicken Sie bitte auf die Schaltfläche "Lizenz eingeben" unten.</proInfo2>
+        <buttonPurchase>Kaufen</buttonPurchase>
+        <buttonEnterLicense>Lizenz eingeben</buttonEnterLicense>
+        <buttonLater>Später</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>Pro-Version freischalten</title>
+        <infoText>Wenn Sie bereits Macs Fan Control gekauft haben, geben Sie Ihre E-Mail-Adresse und Ihren Lizenzschlüssel aus Ihrem E-Mail-Empfang in die folgenden Felder ein. Dadurch werden die Pro-Funktionen der Macs Fan Control vollständig freigeschaltet.</infoText>
+        <licenseVerifyInfo>Die von Ihnen eingegebenen Informationen können über das Internet überprüft werden.</licenseVerifyInfo>
+        <email>E-Mail Adresse</email>
+        <licenseKey>Lizenzschlüssel</licenseKey>
+        <buttonUnlock>Freischalten</buttonUnlock>
+        <buttonRestoreLicense>Lizenz wiederherstellen</buttonRestoreLicense>
+        <invalidLicenseTitle>Ungültige Lizenz!</invalidLicenseTitle>
+        <invalidLicenseText>Achten Sie darauf, dass alle Buchstaben, Zahlen und Striche in der richtigen Reihenfolge eingegeben werden. Wenn Sie die Nummer von Hand eingeben, versuchen Sie stattdessen, sie aus Ihrem E-Mail-Empfang zu kopieren und einzufügen.</invalidLicenseText>
+        <invalidLicenseMismatchOS>Dieser Lizenzschlüssel ist gültig, aber nicht für die Nutzung unter %1.</invalidLicenseMismatchOS>
+        <thanksTitle>Vielen Dank, dass Sie sich für den Kauf von Macs Fan Control Pro entschieden haben.</thanksTitle>
+        <thanksInfo>Alle Einschränkungen der kostenlosen Version wurden aufgehoben. Wir wünschen Ihnen viel Spaß bei der Nutzung der App!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Test Version</trialVersion>
+        <message>Vielen Dank, dass Sie %1 ausprobieren.</message>
+        <messageSecondary>Die einzige Anwendung, um Lüfter auf Intel-Macs unter Windows zu steuern</messageSecondary>
+        <timeLeftDays>Sie haben noch %1 Tage Ihrer Test-Periode übrig.</timeLeftDays>
+        <timeLeftHours>Sie haben noch %1 Stunden Ihrer Test-Periode übrig.</timeLeftHours>
+        <trialOver>Die Test-Periode von %1 Tagen ist nun vorbei.</trialOver>
+        <buttonContinue>Weiter in Test-Periode</buttonContinue>
+        <buttonActivate>Lizenz aktivieren</buttonActivate>
+        <buttonBuy>Jetzt kaufen</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>Macs Fan Control anzeigen</itemShow>
+        <itemAvailableFans>Lüfter:</itemAvailableFans>
+        <itemFanPresets>Lüfter Voreinstellung:</itemFanPresets>
+        <itemMoreLinks>Mehr...</itemMoreLinks>
+        <itemWebsite>Website</itemWebsite>
+        <itemCheckForUpdates>Nach Aktualisierungen suchen</itemCheckForUpdates>
+        <itemTechInfoZip>Archiv mit technischen Infos anlegen...</itemTechInfoZip>
+        <itemRateApp>Auf Macupdate bewerten...</itemRateApp>
+        <itemFollowTwitter>@crystalidea folgen</itemFollowTwitter>
+        <itemUninstall>Deinstallieren...</itemUninstall>
+        <itemExit>Beenden </itemExit>
+        <itemExitMac>Macs Fan Control beenden</itemExitMac>
+        <itemSensorBased>Sensorbasiert</itemSensorBased>
+        <itemUpgradeToPro>Upgrade zur Pro-Version</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>Auf Ihrem Schreibtisch wird ein Supportpaket "%1" bestehend aus anonymen technischen Daten und einem Screenshot des Hauptfensters erstellt.\n\nBitte senden Sie diese Datei an support@crystalidea.com oder posten Sie sie in unserem GitHub Issue Tracker.</message>
+        <browseButton>ZIP Datei anzeigen</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>Einstellungen</title>
+        <TabGeneral>Allgemein</TabGeneral>
+        <tabTrayIcon>Ablagesymbol</tabTrayIcon>
+        <tabSensors>Sensoren</tabSensors>
+        <tabTrayIconMac>Menüleistendarstellung</tabTrayIconMac>
+        <tabDiagnostics>Diagnose</tabDiagnostics>
+        <staticLanguage>Sprache:</staticLanguage>
+        <checkSystemStart>Beim Systemstart automatisch minimiert starten (empfohlen)</checkSystemStart>
+        <checkUpdatesOnStartup>Beim Starten der App nach Aktualisierungen suchen</checkUpdatesOnStartup>
+        <checkDockIcon>Icon im Dock anzeigen</checkDockIcon>
+        <checkFahrenheit>Fahrenheit-Temperaturskala verwenden</checkFahrenheit>
+        <checkPrecise>Genaue Temperatur anzeigen, wenn möglich (z. B. 45.4°C/°F)</checkPrecise>
+        <labelSensors>Ausgelesene Temperaturen von</labelSensors>
+        <checkExternalGPU>Über Thunderbolt angeschlossene eGPUs</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>Sensor:</staticSensor>
+        <staticFan>Lüfter:</staticFan>
+        <staticIcon>Symbol:</staticIcon>
+        <comboIconOptionShow>Anzeigen (farbig)</comboIconOptionShow>
+        <comboIconOptionShowBW>Anzeigen (einfarbig)</comboIconOptionShowBW>
+        <comboOptionNone>Nicht anzeigen</comboOptionNone>
+        <checkTwoLines>Lüfter &amp; Sensoren-Werte übereinander anzeigen</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(Nur °C)</staticCelsiusOnlyOnWindows>
+        <checkLog>Ereignisprotokoll aktivieren (Neustart notwendig)</checkLog>
+        <browseLog>Öffnen…</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>Über Macs Fan Control</title>
+        <staticTechnicalSupport>Technische Unterstützung im Forum</staticTechnicalSupport>
+        <staticOnlineHelp>Online Hilfe</staticOnlineHelp>
+        <staticFreeVersion>Kostenlose Version</staticFreeVersion>
+        <staticProVersion>Pro-Version, %1 Computer(n)-Lizenz</staticProVersion>
+        <staticWarning>DAS PROGRAMM IST FÜR FORTGESCHRITTENE BENUTZER VORGESEHEN, DIE SICH ÜBER DIE FUNKTIONEN UND GEFAHREN IM KLAREN SIND. DIE AUTOREN SIND NICHT VERANTWORTLICH FÜR DATENVERLUST, BESCHÄDIGUNGEN, PROFITVERLUST ODER JEGLICHE ANDEREN VERLUSTE, DIE DURCH DIE BENUTZUNG ODER MISSBRÄUCHLICHE BENUTZUNG DIESES PROGRAMMES ENTSTEHEN KÖNNTEN.</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>Bitte bewerten Sie uns bei MacUpdate.</message>
+        <informativeText>Gefällt Ihnen %1, dann würden wir uns sehr über eine Bewertung freuen. Es dauert weniger als eine Minute. Danke für Ihre Mithilfe!</informativeText>
+        <buttonRate>Bei MacUpdate bewerten.</buttonRate>
+        <buttonNoThanks>Nein, danke.</buttonNoThanks>
+        <checkDontShowAgain>Diesen Hinweis nicht wieder anzeigen.</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>Macs Fan Control deinstallieren?</title>
+        <message>Sie sind dabei, die Anwendung vollständig von Ihrem Mac zu deinstallieren, einschließlich der Einstellungen, des Hilfswerkzeugs und der Lizenzdaten für die Pro-Version. Alle Änderungen an der Lüftersteuerung werden rückgängig gemacht und der/die Lüfter werden automatisch vom System gesteuert. \n\nMöglicherweise werden Sie aufgefordert, die Anwendung zu autorisieren, damit sie sich selbst deinstallieren kann.</message>
+        <authorizeText>Bitte autorisieren Sie die Anwendung, um das Hilfswerkzeug zu deinstallieren.</authorizeText>
+        <buttonUninstall>Deinstallieren</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Lüfter automatisch abgeschaltet</title>
+        <message>Wegen niedriger Temperatur hat dieser Mac die Lüfter abgeschaltet. Die manuelle Lüftersteuerung wird wieder möglich, sobald das System diese reaktiviert, weil Kühlung notwendig ist.</message>
+        <checkDiscard>Diese Meldung nicht wieder zeigen</checkDiscard>
+        <buttonMoreInfo>Weitere Informationen...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>Schließen</buttonClose>
+        <buttonOK>OK</buttonOK>
+        <buttonCancel>Abbrechen</buttonCancel>
+        <buttonContinue>Fortsetzen</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>Freigabe auf %1</ReleasedOn>
+            <CheckForUpdates>Nach Aktualisierungen suchen...</CheckForUpdates>
+            <NewVersionAvailable>Eine neue Version von %1 ist verfügbar!</NewVersionAvailable>
+            <NewVersionAvailableText>%1 %2 ist verfügbar (Sie verwenden Version %3). Möchten Sie die neue Version jetzt herunterladen?</NewVersionAvailableText>
+            <UpdateAlertTitle>Software-Aktualisierung</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>Versionshinweise:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>Später erinnern</UpdateAlertRemindLater>
+            <UpdateAlertSkip>Diese Version überspringen</UpdateAlertSkip>
+            <UpdateAlertInstall>Installieren</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>Automatisch nach Aktualisierungen suchen</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>Sie sind auf dem neuesten Stand!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>%1 %2 ist zur Zeit die neueste verfügbare Version.</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>Beim Herunterladen ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.</MessageErrorConnect>
+            <MessageErrorParse>Beim Lesen der Aktualisierungsinformationen ist ein Fehler aufgetreten.</MessageErrorParse>
+            <UpdateProgressTitle>Aktualisierung von %1</UpdateProgressTitle>
+            <UpdateProgressCancel>Abbrechen</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>Installieren und erneut starten</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>Aktualisierung wird heruntergeladen...</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>Aktualisierung entpacken...</UpdateProgressExtract>
+            <UpdateProgressStatusReady>Bereit zum Installieren</UpdateProgressStatusReady>
+            <UpdateProgressSize>%1 von %2</UpdateProgressSize>
+            <UpdateProgressB>B</UpdateProgressB>
+            <UpdateProgressKB>KB</UpdateProgressKB>
+            <UpdateProgressMB>MB</UpdateProgressMB>
+            <UpdateProgressGB>GB</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>Die Anwendung konnte nicht in den Programme-Ordner verschoben werden.</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>In den Programme-Ordner verschieben?</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>In den Programme-Ordner in Ihrem Heimatverzeichnis verschieben?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>Ich kann mich selbst (%1) in den Programme-Ordner verschieben, wenn Sie möchten.</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>In den Programme-Ordner verschieben</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>Nicht verschieben</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>Bitte beachten Sie, dass für diesen Vorgang ein Administrator-Passwort benötigt wird.</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>Damit Ihr Downloads-Ordner aufgeräumt wird.</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>Rückgängig machen</actionUndo>
+            <actionRedo>Wiederherstellen</actionRedo>
+            <actionCut>Ausschneiden</actionCut>
+            <actionCopy>Kopieren</actionCopy>
+            <actionPaste>Einfügen</actionPaste>
+            <actionDelete>Löschen</actionDelete>
+            <actionSelectAll>Alles auswählen</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>OK</buttonOK>
+            <buttonCancel>Abbrechen</buttonCancel>
+            <buttonClose>Schließen</buttonClose>
+            <buttonYes>Ja</buttonYes>
+            <buttonNo>Nein</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

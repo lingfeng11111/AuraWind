@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIconFile</key>
+    <string>MacsFanControl.icns</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.5.19</string>
+    <key>CFBundleVersion</key>
+    <string>77</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleExecutable</key>
+    <string>Macs Fan Control</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.crystalidea.macsfancontrol</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright 2013-2025 CrystalIDEA Software. All rights reserved.</string>
+    <key>LSUIElement</key>
+    <string>1</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSHighResolutionCapable</key>
+    <string>True</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.13</string>
+    <key>NOTE</key>
+    <string>Created by CrystalIDEA Software</string>
+    <key>UIDesignRequiresCompatibility</key>
+    <true/>
+    <key>SMPrivilegedExecutables</key>
+    <dict>
+        <key>com.crystalidea.macsfancontrol.smcwrite</key>
+        <string>identifier com.crystalidea.macsfancontrol.smcwrite and certificate leaf[subject.OU] = ACC5R6RH47</string>
+    </dict>
+</dict>
+</plist>

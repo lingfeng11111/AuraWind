@@ -30,6 +30,15 @@ final class FanControlViewModel: BaseViewModel {
     /// 温度传感器数据(用于曲线控制)
     @Published private(set) var temperatureSensors: [TemperatureSensor] = []
     
+    /// 风扇图表数据点
+    @Published private(set) var fanChartData: [ChartDataPoint] = []
+    
+    /// 当前选中的时间范围
+    @Published var selectedTimeRange: ChartDataPoint.TimeRange = .oneHour
+    
+    /// 选中的风扇标签（用于图表过滤）
+    @Published var selectedFanLabels: Set<String> = []
+    
     // MARK: - Types
     
     /// 风扇控制模式
@@ -58,6 +67,9 @@ final class FanControlViewModel: BaseViewModel {
     
     /// 更新间隔(秒)
     private let updateInterval: TimeInterval = 2.0
+    
+    /// 最大图表数据点数
+    private let maxChartDataPoints: Int = 3000
     
     // MARK: - Initialization
     
@@ -199,6 +211,83 @@ final class FanControlViewModel: BaseViewModel {
         }
     }
     
+    // MARK: - Chart Data Methods
+    
+    /// 获取指定时间范围的图表数据
+    /// - Parameter range: 时间范围
+    /// - Returns: 过滤后的图表数据点
+    func getChartData(for range: ChartDataPoint.TimeRange) -> [ChartDataPoint] {
+        fanChartData.filtered(by: range)
+    }
+    
+    /// 获取指定风扇的图表数据
+    /// - Parameters:
+    ///   - fanLabels: 风扇标签集合
+    ///   - range: 时间范围
+    /// - Returns: 过滤后的图表数据点
+    func getChartData(
+        for fanLabels: Set<String>,
+        in range: ChartDataPoint.TimeRange
+    ) -> [ChartDataPoint] {
+        let rangeFiltered = fanChartData.filtered(by: range)
+        if fanLabels.isEmpty {
+            return rangeFiltered
+        }
+        return rangeFiltered.filter { fanLabels.contains($0.label) }
+    }
+    
+    /// 获取当前选中范围的图表数据
+    /// - Returns: 图表数据点数组
+    func getCurrentChartData() -> [ChartDataPoint] {
+        getChartData(for: selectedFanLabels, in: selectedTimeRange)
+    }
+    
+    /// 获取所有可用的风扇标签
+    /// - Returns: 风扇标签数组
+    func getAvailableFanLabels() -> [String] {
+        fanChartData.uniqueLabels
+    }
+    
+    /// 切换风扇选择状态
+    /// - Parameter label: 风扇标签
+    func toggleFanSelection(_ label: String) {
+        if selectedFanLabels.contains(label) {
+            selectedFanLabels.remove(label)
+        } else {
+            selectedFanLabels.insert(label)
+        }
+    }
+    
+    /// 选择所有风扇
+    func selectAllFans() {
+        selectedFanLabels = Set(getAvailableFanLabels())
+    }
+    
+    /// 取消选择所有风扇
+    func deselectAllFans() {
+        selectedFanLabels.removeAll()
+    }
+    
+    /// 获取指定标签的统计信息
+    /// - Parameters:
+    ///   - label: 风扇标签
+    ///   - range: 时间范围
+    /// - Returns: (平均值, 最大值, 最小值)
+    func getStatistics(
+        for label: String,
+        in range: ChartDataPoint.TimeRange
+    ) -> (average: Double?, max: Double?, min: Double?) {
+        let average = fanChartData.average(for: label, in: range)
+        let max = fanChartData.maximum(for: label, in: range)
+        let min = fanChartData.minimum(for: label, in: range)
+        return (average, max, min)
+    }
+    
+    /// 清除图表数据
+    func clearChartData() {
+        fanChartData.removeAll()
+    }
+    
     // MARK: - Private Methods
     
     /// 设置数据绑定
@@ -207,7 +296,7 @@ final class FanControlViewModel: BaseViewModel {
         
         // 监控模式变化
         $currentMode
-            .sink { [weak self] mode in
+            .sink { mode in
                 print("风扇控制模式切换为: \(mode.description)")
             }
             .store(in: &cancellables)
@@ -246,6 +335,9 @@ final class FanControlViewModel: BaseViewModel {
             
             // 刷新风扇状态
             await refreshFans()
+            
+            // 收集风扇图表数据
+            await collectFanChartData()
             
             // 如果是曲线模式,根据温度调整风扇
             if currentMode == .curve || [.silent, .balanced, .performance].contains(currentMode) {
@@ -286,5 +378,29 @@ final class FanControlViewModel: BaseViewModel {
     private func applyPresetMode(_ profile: CurveProfile) async {
         activeCurveProfile = profile
         await updateFansBasedOnCurve()
+    }
+    
+    /// 收集风扇图表数据
+    private func collectFanChartData() async {
+        for (_, fan) in fans.enumerated() {
+            let chartPoint = ChartDataPoint(
+                timestamp: Date(),
+                value: Double(fan.currentSpeed),
+                label: fan.name,
+                type: .fanSpeed
+            )
+            addChartDataPoint(chartPoint)
+        }
+    }
+    
+    /// 添加图表数据点
+    private func addChartDataPoint(_ point: ChartDataPoint) {
+        fanChartData.append(point)
+        
+        // 限制图表数据点数量
+        if fanChartData.count > maxChartDataPoints {
+            let data = fanChartData
+            fanChartData = Array(data.suffix(maxChartDataPoints))
+        }
     }
 }

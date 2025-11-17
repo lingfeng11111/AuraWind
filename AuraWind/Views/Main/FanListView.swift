@@ -15,6 +15,9 @@ struct FanListView: View {
     
     @ObservedObject var viewModel: FanControlViewModel
     
+    // 依赖服务
+    private let persistenceService = PersistenceService()
+    
     // MARK: - Body
     
     var body: some View {
@@ -22,6 +25,9 @@ struct FanListView: View {
             VStack(spacing: 24) {
                 // 控制模式选择
                 modeSelectionSection
+                
+                // 风扇转速图表
+                fanChartSection
                 
                 // 风扇列表
                 fanListSection
@@ -37,8 +43,12 @@ struct FanListView: View {
     private var modeSelectionSection: some View {
         BlurGlassCard {
             VStack(alignment: .leading, spacing: 16) {
-                Label("控制模式", systemImage: "slider.horizontal.3")
-                    .font(.headline)
+                Label {
+                    Text("控制模式")
+                } icon: {
+                    Image(systemName: "slider.horizontal.3")
+                }
+                .font(.headline)
                 
                 Picker("控制模式", selection: Binding(
                     get: { viewModel.currentMode },
@@ -62,6 +72,159 @@ struct FanListView: View {
                 }
             }
             .padding(20)
+        }
+    }
+    
+    // MARK: - Fan Chart Section
+    
+    private var fanChartSection: some View {
+        BlurGlassCard {
+            VStack(alignment: .leading, spacing: 16) {
+                // 标题和控制器
+                HStack {
+                    Label {
+                        Text("风扇转速趋势")
+                    } icon: {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                    }
+                    .font(.headline)
+                    
+                    Spacer()
+                    
+                    // 数据点统计
+                    if !viewModel.getCurrentChartData().isEmpty {
+                        Text("\(viewModel.getCurrentChartData().count) 个数据点")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    // 图表导出按钮
+                    if !viewModel.getCurrentChartData().isEmpty {
+                        ChartExportButton(
+                            dataPoints: viewModel.getCurrentChartData(),
+                            chartType: .fanSpeed,
+                            persistenceService: persistenceService
+                        )
+                    }
+                    
+                    // 时间范围选择器
+                    timeRangePicker
+                }
+                
+                // 风扇选择器
+                fanSelector
+                
+                // 图表显示
+                if !viewModel.getCurrentChartData().isEmpty {
+                    FanSpeedChart(
+                        dataPoints: viewModel.getCurrentChartData(),
+                        displayMode: .line,
+                        height: 250
+                    )
+                } else {
+                    chartEmptyState
+                }
+            }
+            .padding(20)
+        }
+    }
+    
+    private var timeRangePicker: some View {
+        Picker("时间范围", selection: $viewModel.selectedTimeRange) {
+            ForEach(ChartDataPoint.TimeRange.allCases, id: \.self) { range in
+                Text(range.rawValue).tag(range)
+            }
+        }
+        .pickerStyle(.menu)
+        .labelsHidden()
+    }
+    
+    private var fanSelector: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("选择风扇")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                Spacer()
+                
+                // 快速选择按钮
+                HStack(spacing: 8) {
+                    Button("全选") {
+                        viewModel.selectAllFans()
+                    }
+                    .font(.caption)
+                    
+                    Button("清空") {
+                        viewModel.deselectAllFans()
+                    }
+                    .font(.caption)
+                }
+            }
+            
+            // 风扇标签网格
+            if !viewModel.getAvailableFanLabels().isEmpty {
+                LazyVGrid(columns: [
+                    GridItem(.adaptive(minimum: 80))
+                ], spacing: 8) {
+                    ForEach(viewModel.getAvailableFanLabels(), id: \.self) { label in
+                        FanLabelButton(
+                            label: label,
+                            isSelected: viewModel.selectedFanLabels.contains(label)
+                        ) {
+                            viewModel.toggleFanSelection(label)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private var chartEmptyState: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "fan.slash")
+                .font(.system(size: 32))
+                .foregroundStyle(.secondary)
+            
+            Text("暂无风扇数据")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            
+            Text("开始监控后将显示风扇转速趋势")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
+        }
+        .frame(maxWidth: .infinity, minHeight: 150)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.secondary.opacity(0.05))
+        )
+    }
+    
+    // MARK: - Fan Label Button
+    
+    private struct FanLabelButton: View {
+        let label: String
+        let isSelected: Bool
+        let action: () -> Void
+        
+        var body: some View {
+            Button(action: action) {
+                Text(label)
+                    .font(.caption)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(isSelected ? Color.auraLogoBlue.opacity(0.2) : Color.clear)
+                            .stroke(
+                                isSelected ? Color.auraLogoBlue : Color.secondary.opacity(0.3),
+                                lineWidth: 1
+                            )
+                    )
+                    .foregroundColor(isSelected ? .auraLogoBlue : .secondary)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
     }
     

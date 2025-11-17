@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 允许IOKit用户客户端访问 -->
+    <key>com.apple.security.temporary-exception.iokit-user-client-class</key>
+    <array>
+        <string>AppleSMCClient</string>
+        <string>IOService</string>
+    </array>
+    
+    <!-- SMC访问权限 (SBPL) -->
+    <key>com.apple.security.temporary-exception.sbpl</key>
+    <array>
+        <string>(allow iokit-open (iokit-connection "AppleSMC"))</string>
+        <string>(allow iokit-set-properties (iokit-connection "AppleSMC"))</string>
+        <string>(allow iokit-get-properties (iokit-connection "AppleSMC"))</string>
+    </array>
+    
+    <!-- 允许访问硬件信息和 Helper Tool -->
+    <key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
+    <array>
+        <string>com.apple.systemmanagement.smc</string>
+        <string>com.aurawind.AuraWind.SMCHelper</string>
+    </array>
+    
+    <!-- 允许使用 SMJobBless 安装 Helper Tool -->
+    <key>com.apple.security.temporary-exception.authorization-right-obtain</key>
+    <array>
+        <string>com.apple.ServiceManagement.blesshelper</string>
+    </array>
+    
+    <!-- 允许读取系统信息 -->
+    <key>com.apple.security.temporary-exception.files.absolute-path.read-only</key>
+    <array>
+        <string>/usr/lib/libSystem.dylib</string>
+        <string>/System/Library/Frameworks/IOKit.framework</string>
+    </array>
+    
+    <!-- 允许网络访问（用于更新和同步） -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    
+    <!-- 允许文件系统访问 -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+    
+    <!-- 允许自动化（用于系统事件） -->
+    <key>com.apple.security.automation.apple-events</key>
+    <true/>
+    
+    <!-- 允许访问用户数据 -->
+    <key>com.apple.security.files.user-selected.read-only</key>
+    <true/>
+    
+    <!-- 允许访问文档文件夹 -->
+    <key>com.apple.security.files.downloads.read-write</key>
+    <true/>
+    
+    <!-- 允许访问桌面文件夹 -->
+    <key>com.apple.security.files.desktop.read-write</key>
+    <true/>
+    
+    <!-- 允许访问图片文件夹 -->
+    <key>com.apple.security.files.pictures.read-write</key>
+    <true/>
+    
+    <!-- 允许访问音乐文件夹 -->
+    <key>com.apple.security.files.music.read-write</key>
+    <true/>
+    
+    <!-- 允许访问电影文件夹 -->
+    <key>com.apple.security.files.movies.read-write</key>
+    <true/>
+    
+    <!-- 禁用沙盒以获得更好的SMC访问 -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+</dict>
+</plist>

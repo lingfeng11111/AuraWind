@@ -60,6 +60,12 @@ extension Color {
     /// 强调色 (用于高亮)
     static let auraAccent = auraSkyBlue
     
+    /// 黄色 (用于图表配色)
+    static let auraYellow = Color.yellow
+    
+    /// 紫色 (用于图表配色)
+    static let auraPurple = Color.purple
+    
     // MARK: - 状态色
     
     /// 正常状态

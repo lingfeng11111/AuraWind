@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>$(DEVELOPMENT_LANGUAGE)</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIconFile</key>
+    <string></string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+    <key>NSMainStoryboardFile</key>
+    <string>Main</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    
+    <!-- SMC访问权限 -->
+    <key>com.apple.security.temporary-exception.sbpl</key>
+    <array>
+        <string>(allow iokit-open (iokit-connection "AppleSMC"))</string>
+        <string>(allow iokit-set-properties (iokit-connection "AppleSMC"))</string>
+        <string>(allow iokit-get-properties (iokit-connection "AppleSMC"))</string>
+    </array>
+    
+    <!-- 硬件访问权限 -->
+    <key>com.apple.security.temporary-exception.iokit-user-client-class</key>
+    <array>
+        <string>AppleSMCClient</string>
+    </array>
+    
+    <!-- 应用需要访问系统信息 -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>AuraWind需要访问系统信息来读取硬件传感器数据和控制风扇转速</string>
+    
+    <!-- 后台运行权限 -->
+    <key>NSBackgroundActivitySchedulerUsageDescription</key>
+    <string>AuraWind需要在后台运行以持续监控温度和风扇状态</string>
+    
+    <!-- SMJobBless 配置 (ad-hoc 签名) -->
+    <key>SMPrivilegedExecutables</key>
+    <dict>
+        <key>com.aurawind.AuraWind.SMCHelper</key>
+        <string>identifier "com.aurawind.AuraWind.SMCHelper"</string>
+    </dict>
+</dict>
+</plist>

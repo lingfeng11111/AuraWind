@@ -3,6 +3,7 @@
 //  AuraWind
 //
 //  Created by AuraWind Team on 2025-11-16.
+//  Updated: 2025-11-17 - Integrated real chart visualization
 //
 
 import SwiftUI
@@ -14,26 +15,12 @@ struct TemperatureChartView: View {
     // MARK: - Properties
     
     @ObservedObject var viewModel: TemperatureMonitorViewModel
-    @State private var selectedTimeRange: TimeRange = .hour
-    @State private var selectedSensor: TemperatureSensor?
+    @State private var displayMode: TemperatureLineChart.DisplayMode = .area
+    @State private var showSensorPicker: Bool = false
     
-    // MARK: - Types
-    
-    enum TimeRange: String, CaseIterable {
-        case minute = "1分钟"
-        case fiveMinutes = "5分钟"
-        case fifteenMinutes = "15分钟"
-        case hour = "1小时"
-        
-        var duration: TimeInterval {
-            switch self {
-            case .minute: return 60
-            case .fiveMinutes: return 300
-            case .fifteenMinutes: return 900
-            case .hour: return 3600
-            }
-        }
-    }
+    // 依赖服务
+    private let persistenceService = PersistenceService()
+    private let rangeManager = ChartRangeManager(persistenceService: PersistenceService())
     
     // MARK: - Body
     
@@ -43,11 +30,11 @@ struct TemperatureChartView: View {
                 // 统计信息
                 statisticsSection
                 
-                // 时间范围选择
-                timeRangeSelector
+                // 控制面板
+                controlPanel
                 
-                // 图表占位
-                chartPlaceholder
+                // 实时温度图表
+                chartSection
                 
                 // 传感器列表
                 sensorsSection
@@ -56,6 +43,16 @@ struct TemperatureChartView: View {
         }
         .navigationTitle("温度监控")
         .auraBackground()
+        .sheet(isPresented: Binding(
+            get: { rangeManager.showRangeEditor },
+            set: { rangeManager.showRangeEditor = $0 }
+        )) {
+            YAxisRangeEditor(
+                chartType: .temperature,
+                rangeManager: rangeManager
+            )
+            .frame(width: 450, height: 600)
+        }
     }
     
     // MARK: - Statistics
@@ -85,68 +82,235 @@ struct TemperatureChartView: View {
         }
     }
     
-    // MARK: - Time Range Selector
+    // MARK: - Control Panel
     
-    private var timeRangeSelector: some View {
+    private var controlPanel: some View {
         BlurGlassCard {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("时间范围")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                
-                Picker("时间范围", selection: $selectedTimeRange) {
-                    ForEach(TimeRange.allCases, id: \.self) { range in
-                        Text(range.rawValue).tag(range)
+            VStack(spacing: 16) {
+                // 时间范围选择器
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("时间范围")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    Picker("时间范围", selection: $viewModel.selectedTimeRange) {
+                        ForEach(ChartDataPoint.TimeRange.allCases) { range in
+                            Text(range.rawValue).tag(range)
+                        }
                     }
+                    .pickerStyle(.segmented)
                 }
-                .pickerStyle(.segmented)
+                
+                Divider()
+                
+                // 显示模式和传感器选择
+                HStack {
+                    // 显示模式
+                    Menu {
+                        Button {
+                            displayMode = .line
+                        } label: {
+                            Label("折线图", systemImage: "chart.xyaxis.line")
+                        }
+                        
+                        Button {
+                            displayMode = .area
+                        } label: {
+                            Label("面积图", systemImage: "chart.line.uptrend.xyaxis")
+                        }
+                        
+                        Button {
+                            displayMode = .point
+                        } label: {
+                            Label("散点图", systemImage: "circle.grid.3x3")
+                        }
+                    } label: {
+                        Label("显示模式", systemImage: displayModeIcon)
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.auraLogoBlue)
+                    
+                    Spacer()
+                    
+                    // 传感器选择
+                    Button {
+                        showSensorPicker.toggle()
+                    } label: {
+                        Label(
+                            "\(viewModel.selectedSensorLabels.isEmpty ? "全部" : "\(viewModel.selectedSensorLabels.count)个")传感器",
+                            systemImage: "slider.horizontal.3"
+                        )
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.auraMediumBlue)
+                }
+                
+                // 传感器选择器（展开状态）
+                if showSensorPicker {
+                    sensorPickerView
+                }
             }
             .padding(16)
         }
     }
     
-    // MARK: - Chart Placeholder
+    // MARK: - Sensor Picker
     
-    private var chartPlaceholder: some View {
-        BlurGlassCard {
-            VStack(spacing: 16) {
-                Image(systemName: "chart.xyaxis.line")
-                    .font(.system(size: 48))
-                    .foregroundColor(.auraLogoBlue)
-                
-                Text("温度趋势图表")
-                    .font(.headline)
-                
-                Text("图表功能将在后续版本实现")
+    private var sensorPickerView: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Divider()
+            
+            HStack {
+                Text("选择传感器")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
-                // 简单的数据点显示
-                if !viewModel.sensors.isEmpty {
-                    VStack(spacing: 8) {
-                        ForEach(viewModel.sensors.prefix(3)) { sensor in
-                            HStack {
-                                Circle()
-                                    .fill(sensorColor(for: sensor))
-                                    .frame(width: 8, height: 8)
-                                
-                                Text(sensor.name)
-                                    .font(.caption)
-                                
-                                Spacer()
-                                
-                                Text("\(sensor.readings.count) 个数据点")
-                                    .font(.caption.monospacedDigit())
-                                    .foregroundColor(.secondary)
-                            }
+                Spacer()
+                
+                Button("全选") {
+                    viewModel.selectAllSensors()
+                }
+                .font(.caption)
+                .buttonStyle(.borderless)
+                
+                Button("清空") {
+                    viewModel.deselectAllSensors()
+                }
+                .font(.caption)
+                .buttonStyle(.borderless)
+            }
+            
+            LazyVGrid(columns: [
+                GridItem(.flexible()),
+                GridItem(.flexible())
+            ], spacing: 8) {
+                ForEach(viewModel.getAvailableSensorLabels(), id: \.self) { label in
+                    Button {
+                        viewModel.toggleSensorSelection(label)
+                    } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: viewModel.selectedSensorLabels.contains(label)
+                                ? "checkmark.circle.fill"
+                                : "circle")
+                            .font(.caption)
+                            
+                            Text(label)
+                                .font(.caption)
+                                .lineLimit(1)
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(viewModel.selectedSensorLabels.contains(label)
+                                    ? Color.auraLogoBlue.opacity(0.15)
+                                    : Color.clear)
+                        )
                     }
-                    .padding(.top, 8)
+                    .buttonStyle(.plain)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 300)
-            .padding(32)
+        }
+    }
+    
+    // MARK: - Chart Section
+    
+    @ViewBuilder
+    private var chartSection: some View {
+        BlurGlassCard {
+            VStack(alignment: .leading, spacing: 16) {
+                HStack {
+                    Label {
+                        Text("温度趋势")
+                    } icon: {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                    }
+                    .font(.headline)
+                    
+                    Spacer()
+                    
+                    // 数据点统计和控制器
+                    HStack(spacing: 12) {
+                        // 范围显示
+                        if !filteredChartData.isEmpty {
+                            Text(rangeManager.getRangeDisplayText(for: .temperature))
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .help("当前Y轴范围")
+                        }
+                        
+                        // 范围设置按钮
+                        Button {
+                            rangeManager.showRangeEditor = true
+                        } label: {
+                            Image(systemName: "slider.horizontal.3")
+                                .font(.system(size: 14))
+                        }
+                        .buttonStyle(.bordered)
+                        .tint(.auraMediumBlue)
+                        .help("自定义Y轴范围")
+                        
+                        // 数据点统计
+                        if !viewModel.chartData.isEmpty {
+                            Text("\(filteredChartData.count) 个数据点")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        // 图表导出按钮
+                        if !filteredChartData.isEmpty {
+                            ChartExportButton(
+                                dataPoints: filteredChartData,
+                                chartType: .temperature,
+                                persistenceService: persistenceService
+                            )
+                        }
+                    }
+                }
+                
+                Divider()
+                
+                // 实时图表
+                TemperatureLineChart(
+                    dataPoints: filteredChartData,
+                    displayMode: displayMode,
+                    showLegend: true,
+                    showGrid: true,
+                    height: 320,
+                    rangeManager: rangeManager
+                )
+            }
+            .padding(20)
+        }
+        
+        // 数据标注面板
+        if !viewModel.getVisibleAnnotations().isEmpty || !viewModel.annotationManager.visibleEventMarkers.isEmpty {
+            DataAnnotationView(
+                annotations: viewModel.getVisibleAnnotations(),
+                eventMarkers: viewModel.annotationManager.visibleEventMarkers,
+                dataPoints: filteredChartData,
+                chartType: .temperature
+            )
+        }
+    }
+    
+    // MARK: - Computed Properties
+    
+    /// 过滤后的图表数据
+    private var filteredChartData: [ChartDataPoint] {
+        viewModel.getCurrentChartData()
+    }
+    
+    /// 显示模式图标
+    private var displayModeIcon: String {
+        switch displayMode {
+        case .line:
+            return "chart.xyaxis.line"
+        case .area:
+            return "chart.line.uptrend.xyaxis"
+        case .point:
+            return "circle.grid.3x3"
         }
     }
     

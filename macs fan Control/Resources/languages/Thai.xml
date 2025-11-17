@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.1" Author="audi1010">
+    <MainWindow>
+        <staticSensorsListHeader>เซ็นเซอร์วัดอุณหภูมิ</staticSensorsListHeader>
+        <listColumnFan>พัดลม</listColumnFan>
+        <listColumnRPM>รอบต่ำสุด/รอบปัจจุบัน/รอบมากสุด ต่อนาที</listColumnRPM>
+        <listColumnControl>ควบคุม</listColumnControl>
+        <listColumnSensor>เซ็นเซอร์</listColumnSensor>
+        <listColumnSensorValue>ค่า</listColumnSensorValue>
+        <listSeparatorDrives>ไดร์ฟ:</listSeparatorDrives>
+        <popupMenuItemControl>เปลี่นการควบคุม</popupMenuItemControl>
+        <popupMenuItemReset>รีเซ็ตเป็นระบบอัตโนมัติ</popupMenuItemReset>
+        <fanControlAutomatic>อัตโนมัติ</fanControlAutomatic>
+        <fanControlAutomaticInfo>อัตโนมัติ (ควบคุมเองโดยระบบ)</fanControlAutomaticInfo>
+        <fanControlConstant>ค่าคงที่ที่ %1</fanControlConstant>
+        <fanControlSensor>ใช้ %1 เป็นตัวกำหนด</fanControlSensor>
+        <fanControlUnknown>ไม่ทราบ!</fanControlUnknown>
+        <buttonFanControlCustom>กำหนดเอง...</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>ควบคุมโดยกำหนดเอง</buttonFanControlCustomInfo>
+        <buttonMinimize>ย่อหน้าต่าง</buttonMinimize>
+        <buttonMinimizeMac>ซ่อนไปที่แถบเมนู</buttonMinimizeMac>
+        <buttonPreferences>การตั้งค่า...</buttonPreferences>
+        <buttonAbout>เกี่ยวกับ...</buttonAbout>
+        <messageHelperToolInstall>โปรแรกมควบคุมพัดลมแมคต้องการเครื่องมือช่วยเหลือในการติดตั้งสำหรับการควบคุมพัดลม คุณสามารถข้ามขั้นตอนนี้ไปได้ถ้าคุณต้องการให้แสดงผลพัดลม &amp; เว็นเซอร์อุณหภูมิ</messageHelperToolInstall>
+        <messageHelperToolUpgrade>โปรแกรมควบคุมพัดลมแมคต้องการที่จะติดตั้งรุ่นการอัพเดทของเครื่องมือช่วยเหลือในการควบคุมพัดลม</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>การควบคุมพัดลมนั้นไม่สามารถทำได้</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>โปรแกรมควบคุมพัดลมแมคไม่สามารถเชื่อมต่อกับแอพช่วยเหลือเพื่อเปิดใช้งานการควบคุมพัดลม และความเร็วรอบหมุน \n\nโปรดทำให้มั่นใจว่าได้กรอกรหัสผ่านผู้ดูแลระบบเมื่อถูกถามแล้ว\n\nคุณยังสามารถใช้แอพนี้ในโหมดติดตามอุณหภูมิได้อย่างเดียว</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>ติดตามอุณหภูมิได้อย่างเดียว</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>ตรวจไม่พบพัดลม, โปรดลอง[รีเซต SMC](https://support.apple.com/en-us/HT201295)</messageNoFansDetected>
+        <messageNoFansAvailable>This computer doesn't have any fans and it's cooled passively</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>ควบคุมสำหรับพัดลม '%1''</title>
+        <radioConstant>ใช้ค่าความเร็ว RPM แบบคงที่</radioConstant>
+        <radioSensor>ใช้ค่าจากตัวเซ็นเซอร์</radioSensor>
+        <staticIncrease>ตั้งอุณหภูมิที่จะให้พัดลมเริ่มหมุนเร็วขึ้น:</staticIncrease>
+        <staticMax>อุณหภูมิสูงสุด:</staticMax>
+        <statusWarning>มีบางอย่างผิดปรกติ - ค่าต่ำ/ค่าสูงสุด ของพัดลมนั้นเหมือนกัน (%1).&lt;br/&gt; โปรดลบโปรแกรมควบคุมพัดลมอื่นๆ แล้วรีเซ็ต SMC</statusWarning>
+        <saveToCurrentPreset>บันทึกไปยังพรีเซ็ตปัจจุบัน ('%1')</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>พรีเซ็ตที่ใช้งานอยู่:</activePresetLabel>
+        <presetAutomatic>อัตโนมัติ</presetAutomatic>
+        <presetFullBlast>สูงสุด</presetFullBlast>
+        <presetCurrentUnsaved>กำหนดเอง*</presetCurrentUnsaved>
+        <presetMenuSave>บันทึก...</presetMenuSave>
+        <presetMenuRename>เปลี่ยนชื่อ</presetMenuRename>
+        <presetMenuDelete>ลบ</presetMenuDelete>
+        <presetMenuPredefined>พรีเซตที่กำหนดไว้ล่วงหน้า:</presetMenuPredefined>
+        <presetMenuCustom>พรีเซตกำหนดเอง:</presetMenuCustom>
+        <presetMenuApply>นำไปใช้</presetMenuApply>
+        <presetMenuProVersion>มีให้ใช้ในรุ่นโปร</presetMenuProVersion>
+        <presetMenuCurrent>พรีเซ็ต - %1</presetMenuCurrent>
+        <presetMenuDiscard>ยกเลิกการเปลี่ยนแปลง (รีเซตพัดลมทุกตัวไปเป็นอัตโนมัติ)</presetMenuDiscard>
+        <labelPresetName>ชื่อพรีเซต:</labelPresetName>
+        <savePresetTitle>บันทึกพรีเซตที่กำหนดเอง</savePresetTitle>
+        <editPresetTitle>แก้ไขชื่อพรีเซต</editPresetTitle>
+        <presetCreateNew>ใหม่...</presetCreateNew>
+        <presetCreateNewTitle>สร้างพรีเซตใหม่</presetCreateNewTitle>
+        <presetCreateNewMessage>พัดลมทุกตัวของคุณนั้นกำลังถูกควบคุมโดยระบบ\n\nโปรดเปลี่ยนการควบคุมเป็นกำหนดเองเพื่อให้หนึ่งในพัดลมของคุณสามารถสร้างพรีเซตใหม่ขึ้นมาได้</presetCreateNewMessage>
+        <presetCreateNewMessage2>Please change control for at least one of your fans, because currently all of them are spinning full blast matching the existing '%1' preset.</presetCreateNewMessage2>
+        <presetCreateNewButton>การควบคุมกำหนดเองสำหรับพัดลม '%1' </presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>อัพเกรดไปเป็นควบคุมพัดลมแมคโปร</title>
+        <proInfo1>รุ่นโปรนั้นจะปลดล็อกความสามารถในการสร้าง และบันทึกพรีเซตการควบคุมพัดลมได้ ทำให้คุณสามารถสลับการควบคุมตามกิจกรรมที่กำลังทำได้อย่างง่ายดาย</proInfo1>
+        <proInfo2>ถ้าคุณนั้นเคยซื้อรุ่นโปรแล้ว โปรดกดปุ่ม 'กรอกใบอนุญาติ' ด้านล่าง</proInfo2>
+        <buttonPurchase>สั่งซื้อ</buttonPurchase>
+        <buttonEnterLicense>กรอกใบอนุญาติ</buttonEnterLicense>
+        <buttonLater>ไว้ทีหลัง</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>ปลดล็อกรุ่นโปร</title>
+        <infoText>ถ้าคุณเคยซื้อ Macs Fan Control แล้ว, โปรดกรอกที่ิอยู่อีเมลของคุณ และคีย์ใบอนุญาติจากใบเสร็จในเมลของคุณลงในกล่องกรอกข้อความด้านล่างนี้ นี่จะเป็นการปลดล็อกฟีทเจอร์โปรแบบเต็มสำหรับควบคุมพัดลมแมค</infoText>
+        <licenseVerifyInfo>ข้อมูลที่คุรกรอกอาจอาจได้รับการยืนยันผ่านทางอินเทอร์เน็ต</licenseVerifyInfo>
+        <email>ที่อยู่อีเมล</email>
+        <licenseKey>คีย์ใบอนุญาติ</licenseKey>
+        <buttonUnlock>ปลดล็อค</buttonUnlock>
+        <buttonRestoreLicense>Restore License</buttonRestoreLicense>
+        <invalidLicenseTitle>ใบอนุญาติผิด!</invalidLicenseTitle>
+        <invalidLicenseText>ให้แน่ใจว่าตัวอักษร ตัวเลข และขีดทุกตัวนั้นถูกกรอกอย่างถูกต้อง ถ้าคุณพิพม์ด้วยมือ ลองคัดลอกและวางคีย์จากในใบเสร็จในอีเมลของคุณแทน</invalidLicenseText>
+        <invalidLicenseMismatchOS>คีย์ใบอนุญาตินี้นั้นถูกต้อง แต่ไม่ได้ให้ใช้กับ %1</invalidLicenseMismatchOS>
+        <thanksTitle>ของคุณสำหรับการสั่งซื้อควบคุมพัดลมแมคโปร</thanksTitle>
+        <thanksInfo>ข้อจำกัดขงรุ่นฟรีทั้งหมดได้ถูกนำออกไปแล้ว พวกเราหวังว่าคุณจะสนุกกับการใช้แอพนี้!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Trial version</trialVersion>
+        <message>Thank you for trying %1</message>
+        <messageSecondary>The only app able to control fans on Intel-based Macs in Windows</messageSecondary>
+        <timeLeftDays>You have %1 days remaining of your trial period.</timeLeftDays>
+        <timeLeftHours>You have %1 hours remaining of your trial period.</timeLeftHours>
+        <trialOver>The trial of %1 days is over.</trialOver>
+        <buttonContinue>Continue Trial</buttonContinue>
+        <buttonActivate>Activate License</buttonActivate>
+        <buttonBuy>Buy Now</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>เปิดโปรแกรมควบคุมพัดลมแมค</itemShow>
+        <itemAvailableFans>พัดลมที่มี</itemAvailableFans>
+        <itemFanPresets>พรีเซ็ตพัดลม:</itemFanPresets>
+        <itemMoreLinks>เพิ่มเติม</itemMoreLinks>
+        <itemWebsite>เว็บไซต์</itemWebsite>
+        <itemCheckForUpdates>อัพเดท...</itemCheckForUpdates>
+        <itemTechInfoZip>Create tech zip file...</itemTechInfoZip>
+        <itemRateApp>ให้คะแนนบน Macupdate</itemRateApp>
+        <itemFollowTwitter>ติดตาม @crystalidea</itemFollowTwitter>
+        <itemUninstall>Uninstall...</itemUninstall>
+        <itemExit>ปิดโปรแกรม</itemExit>
+        <itemExitMac>ออกจากโปรแกรม</itemExitMac>
+        <itemSensorBased>เซ็นเซอร์เป็นตัวกำหนด</itemSensorBased>
+        <itemUpgradeToPro>อัพเกรดเป็นรุ่นโปร</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>A support package '%1' consisting of anonymous technical data and main window screenshot is created on your desktop.\n\nPlease send this file to support@crystalidea.com or post at our GitHub Issue Tracker.</message>
+        <browseButton>Show zip file</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>การตั้งค่า</title>
+        <TabGeneral>ทั่วไป</TabGeneral>
+        <tabTrayIcon>ไอคอนบนแถบงาน</tabTrayIcon>
+        <tabSensors>เซ็นเซอร์</tabSensors>
+        <tabTrayIconMac>แถบเมนู</tabTrayIconMac>
+        <tabDiagnostics>วินิจฉัย</tabDiagnostics>
+        <staticLanguage>ภาษา:</staticLanguage>
+        <checkSystemStart>เริ่มโปรแกรมและย่อเก็บอัตโนมัติ (แนะนำให้ใช้)</checkSystemStart>
+        <checkUpdatesOnStartup>ตรวจหาอัพเดททุกครั้งเมื่อแอปถูกเปิด</checkUpdatesOnStartup>
+        <checkDockIcon>Show icon in dock</checkDockIcon>
+        <checkFahrenheit>ใช้ค่าอุณหภูมิองศาฟาเรนไฮต์</checkFahrenheit>
+        <checkPrecise>แสดงค่าแบบแม่นยำ เมื่อสามารถทำได้ (เช่น 45.4)</checkPrecise>
+        <labelSensors>อ่างค่าอุณหภูมิของ</labelSensors>
+        <checkExternalGPU>eGPUs เมื่อเชื่อมต่อผ่าน Thunderbolt</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>เซ็นเซอร์:</staticSensor>
+        <staticFan>พัดลม:</staticFan>
+        <staticIcon>ไอคอน:</staticIcon>
+        <comboIconOptionShow>แสดง</comboIconOptionShow>
+        <comboIconOptionShowBW>แสดง (สีดำ &amp; สีขาว)</comboIconOptionShowBW>
+        <comboOptionNone>ไม่เลย</comboOptionNone>
+        <checkTwoLines>แสดงค่าจากเซ็นเซอร์/พัดลมเป็นสองบันทัด เพื่อประหยัดพื้นที่</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(องศาเซลเซียสเท่านั้น)</staticCelsiusOnlyOnWindows>
+        <checkLog>เปิดการเก็บข้อมูล (ต้องรีสตาร์ท)</checkLog>
+        <browseLog>ค้นหา</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>เกี่ยวกับโปรแกรมควบคุมพัดลมแมค</title>
+        <staticTechnicalSupport>กระทู้ช่วยเหลือทางเทคนิค</staticTechnicalSupport>
+        <staticOnlineHelp>ช่วยเหลือทางอินเตอร์เน็ต</staticOnlineHelp>
+        <staticFreeVersion>รุ่นฟรี</staticFreeVersion>
+        <staticProVersion>รุ่นโปร, %1 คอมพิวเตอร์</staticProVersion>
+        <staticWarning>โปรแกรมนี้สร้างขึ้นสำหรับผู้ใช้ที่รู้การใช้โปรแกรมนี้อย่างถูกต้อง. ผู้สร้างโปรแกรมไม่ขอรับผิดชอบหากเกิดเหตุการ เช่น ข้อมูลสูญหาย, การเสียของอุปกรณ์, การทำให้สูญกำไร หรือเหตุการใดๆ ที่เกิดจากการใช้โปรแกรมนี้อย่างไม่ถูกต้อง</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>ให้คะแนนแอปบน MacUpdate</message>
+        <informativeText>ถ้าคุณชื่อชอบการใช้%1, คุณโปรดช่วยสละเวลาให้คะแนนได้ไหม? มันใช้เวลาไม่ถึงนาที ของคุณสำหรับการสนับสนุน!</informativeText>
+        <buttonRate>ให้คะแนนบน MacUpdate</buttonRate>
+        <buttonNoThanks>ไม่, ขอบคุณ</buttonNoThanks>
+        <checkDontShowAgain>ไม่แสดงข้อความนี้อีก</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>Uninstall Macs Fan Control?</title>
+        <message>You're about to completely uninstall the app from your mac including its preferences, the fan helper tool and licensing data for the Pro version. All modifications to the default fan control will be reverted and the fan(s) will be controlled automatically by the system. \n\nYou may be prompted to authorize the app to be able to uninstall itself.</message>
+        <authorizeText>Please authorize the app to be able to uninstall the fan helper tool.</authorizeText>
+        <buttonUninstall>Uninstall</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Fans disabled by hardware</title>
+        <message>Due to low temperatures, this Mac model has automatically disabled the fans. Manual fan control will take effect once the system reactivates them, when it determines that cooling is necessary.</message>
+        <checkDiscard>Do not show this message again</checkDiscard>
+        <buttonMoreInfo>More info...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>ปิด</buttonClose>
+        <buttonOK>โอเค</buttonOK>
+        <buttonCancel>ยกเลิก</buttonCancel>
+        <buttonContinue>ทำต่อไป</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>ปล่อยให้ใช้เมื่อ %1</ReleasedOn>
+            <CheckForUpdates>อัพเดท...</CheckForUpdates>
+            <NewVersionAvailable>มีเวอร์ชั่นใหม่ของ %1</NewVersionAvailable>
+            <NewVersionAvailableText>ตอนนี้มี %1 %2 แล้ว - คุณมี %3 อยู่ คุณจะดาวน์โหลดเลยไหม</NewVersionAvailableText>
+            <UpdateAlertTitle>อัพเดทซอฟ์ทแวร์</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>มีอะไรใหม่:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>เตือนอีกครั้งภายหลัง</UpdateAlertRemindLater>
+            <UpdateAlertSkip>ข้ามเวอร์ชั่นนี้</UpdateAlertSkip>
+            <UpdateAlertInstall>ติดตั้งอัพเดท</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>ตรวจสอบการอัพเดทโดยอัตโรมัติ</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>เวอร์ชั่นนี้ล่าสุดแล้ว!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>เวอร์ชั่น %1 %2 เป็นเวอร์ชั่นล่าสุด</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>เกิดข้อผิดพลาดขึ้นระหว่างดาวน์โหลดตัวอัพเดท. โปรดลองอีกครั้งภายหลัง.</MessageErrorConnect>
+            <MessageErrorParse>เกิดข้อผิดพลากขึ้นระหว่างการวิเคราะห์ตัวอัพเดท</MessageErrorParse>
+            <UpdateProgressTitle>กำลังอัพเดท %1</UpdateProgressTitle>
+            <UpdateProgressCancel>ยกเลิก</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>ติดตั้งและเริ่มใหม่</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>กำลังดาวน์โหลดตัวอัพเดท...</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>กำลังเตรีมการอัพเดท...</UpdateProgressExtract>
+            <UpdateProgressStatusReady>พร้อมติดตั้งแล้ว</UpdateProgressStatusReady>
+            <UpdateProgressSize>%1 จาก %2</UpdateProgressSize>
+            <UpdateProgressB>ไบร์ท</UpdateProgressB>
+            <UpdateProgressKB>กิโลไบร์ท</UpdateProgressKB>
+            <UpdateProgressMB>เมกาไบร์ท</UpdateProgressMB>
+            <UpdateProgressGB>กิกาไบร์ท</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>ไม่สามารถย้ายไปยังโฟล์เดอร์แอปพลิเคชั่น</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>ย้ายไปยังแอปพลิเคชั่น</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>ต้องการย้ายไปยังโฟล์เดอร์แอปพลิเคชั่นในโฟลเดอร์โฮมของคุณใช่ไหม?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>ต้องการให้ %1 ย้ายตัวเองไปยังโฟล์เดอร์แอปพลิเคชั่นหรือไม่?</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>ย้ายไปยังโฟล์เดอร์แอปพลิเคชั่น</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>ไม่ย้าย</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>หมายเหตุว่าการกระทำนี้ต้องการรหัสผ่านผู้ดูแลระบบ</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>นี่จะทำให้โฟลเดอร์ดาวน์โหลดของคุณนั้นไม่รกเกินไป</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>ย้อนกลับ</actionUndo>
+            <actionRedo>ทำใหม่</actionRedo>
+            <actionCut>ตัด</actionCut>
+            <actionCopy>คัดลอก</actionCopy>
+            <actionPaste>วาง</actionPaste>
+            <actionDelete>ลบ</actionDelete>
+            <actionSelectAll>เลือกทั้งหมด</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>OK</buttonOK>
+            <buttonCancel>ยกเลิก</buttonCancel>
+            <buttonClose>ปิด</buttonClose>
+            <buttonYes>ใช่</buttonYes>
+            <buttonNo>ไม่</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.5" Author="Rabota IT">
+    <MainWindow>
+        <staticSensorsListHeader>Temperatursensorer:</staticSensorsListHeader>
+        <listColumnFan>Fläkt</listColumnFan>
+        <listColumnRPM>Min/Nuvarande/Max RPM</listColumnRPM>
+        <listColumnControl>Styrning</listColumnControl>
+        <listColumnSensor>Sensor</listColumnSensor>
+        <listColumnSensorValue>Värde</listColumnSensorValue>
+        <listSeparatorDrives>Hårddiskar:</listSeparatorDrives>
+        <popupMenuItemControl>Ändra styrning...</popupMenuItemControl>
+        <popupMenuItemReset>Återställ till automatisk styrning</popupMenuItemReset>
+        <fanControlAutomatic>Auto</fanControlAutomatic>
+        <fanControlAutomaticInfo>Automatisk (styrs av systemet)</fanControlAutomaticInfo>
+        <fanControlConstant>Konstant värde på %1</fanControlConstant>
+        <fanControlSensor>Baserat på %1</fanControlSensor>
+        <fanControlUnknown>Okänd!</fanControlUnknown>
+        <buttonFanControlCustom>Anpassad...</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>Specificera anpassad styrning</buttonFanControlCustomInfo>
+        <buttonMinimize>Minimera</buttonMinimize>
+        <buttonMinimizeMac>Göm till menyraden</buttonMinimizeMac>
+        <buttonPreferences>Inställningar...</buttonPreferences>
+        <buttonAbout>Om...</buttonAbout>
+        <messageHelperToolInstall>Macs Fan Control behöver installera ett hjälpprogram för att kunna styra fläktarna. Du kan hoppa över detta om du bara vill övervaka fläktarna &amp; temperatursensorerna.</messageHelperToolInstall>
+        <messageHelperToolUpgrade>Macs Fan Control behöver installera en uppdaterad version av hjälpprogrammet som styr fläktarna.</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>Fläktstyrning är inte tillgängligt</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>Macs Fan Control kan inte ansluta till hjälpprogrammet som möjliggör styrning av fläktarna. \n\nSe till att ange ett administratörslösenord när du ombeds.\n\nDu kan fortfarande använda programmet enbart för övervakning.</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>Endast övervakning</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>Inga fläktar detekterades, gör en [återställning av SMC](https://support.apple.com/sv-se/HT201295)</messageNoFansDetected>
+        <messageNoFansAvailable>Denna dator har inga fläktar och kyls passivt</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>Ändra styrningen av fläkten: '%1'</title>
+        <radioConstant>Konstant RPM-värde</radioConstant>
+        <radioSensor>Sensor-baserat värde</radioSensor>
+        <staticIncrease>Temperatur som fläktens hastighet kommer att börja öka från:</staticIncrease>
+        <staticMax>Max temperatur:</staticMax>
+        <statusWarning>Något är fel - min/max-värdena för fläkten är lika (%1).&lt;br/&gt; Avinstallera alla andra fläktstyrningsprogram och återställ SMC.</statusWarning>
+        <saveToCurrentPreset>Spara till nuvarande förinställning ('%1')</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>Aktiv förinställning:</activePresetLabel>
+        <presetAutomatic>Automatisk</presetAutomatic>
+        <presetFullBlast>Fullt blås</presetFullBlast>
+        <presetCurrentUnsaved>Anpassat*</presetCurrentUnsaved>
+        <presetMenuSave>Spara...</presetMenuSave>
+        <presetMenuRename>Döp om</presetMenuRename>
+        <presetMenuDelete>Radera</presetMenuDelete>
+        <presetMenuPredefined>Fördefinierade förinställningar:</presetMenuPredefined>
+        <presetMenuCustom>Anpassade förinställningar:</presetMenuCustom>
+        <presetMenuApply>Tillämpa</presetMenuApply>
+        <presetMenuProVersion>Tillgängligt i PRO-versionen</presetMenuProVersion>
+        <presetMenuCurrent>Förinställning - %1</presetMenuCurrent>
+        <presetMenuDiscard>Kassera (återställ alla fläktar till auto)</presetMenuDiscard>
+        <labelPresetName>Förinställningens namn:</labelPresetName>
+        <savePresetTitle>Spara anpassad förinställning</savePresetTitle>
+        <editPresetTitle>Redigera förinställningens namn</editPresetTitle>
+        <presetCreateNew>Ny...</presetCreateNew>
+        <presetCreateNewTitle>Skapa en ny förinställning</presetCreateNewTitle>
+        <presetCreateNewMessage>Alla dina fläktar styrs för närvarande av systemet. \n\nVar god ändra till Anpassad kontroll för åtminstone en av dina fläktar för att kunna skapa en ny förinställning.</presetCreateNewMessage>
+        <presetCreateNewMessage2>Var god ändra kontroll för åtminstone en av dina fläktar, då alla för närvarande snurrar på fullt blås, som matchar existerande förinställning '%1'.</presetCreateNewMessage2>
+        <presetCreateNewButton>Anpassad kontroll för fläkten '%1'</presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>Uppgradera till Macs Fan Control Pro</title>
+        <proInfo1>Pro-versionen kan spara anpassade förinställningar för dina fläktar så att du snabbt kan växla mellan dem beroende på din aktivitet.</proInfo1>
+        <proInfo2>Om du redan har köpt programmet klicka på 'Mata in licens'-knappen nedan.</proInfo2>
+        <buttonPurchase>Köp</buttonPurchase>
+        <buttonEnterLicense>Mata in licens</buttonEnterLicense>
+        <buttonLater>Senare</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>Lås upp Pro-versionen</title>
+        <infoText>Om du redan köpt Macs Fan Control, mata in din e-postadress och din licensnyckel från ditt e-postkvitto i fälten nedan. Detta kommer att låsa upp alla Pro-funktioner i Macs Fan Control.</infoText>
+        <licenseVerifyInfo>Informationen du matar in kan komma att verifieras över internet.</licenseVerifyInfo>
+        <email>E-postadress</email>
+        <licenseKey>Licensnyckel</licenseKey>
+        <buttonUnlock>Lås upp</buttonUnlock>
+        <buttonRestoreLicense>Återställ licens</buttonRestoreLicense>
+        <invalidLicenseTitle>Ogiltig licens!</invalidLicenseTitle>
+        <invalidLicenseText>Se till att alla bokstäver, siffror och bindestreck är inmatade i korrekt ordning. Om du angett dem för hand, prova att kopiera och klistra in dem från ditt e-postkvitto istället.</invalidLicenseText>
+        <invalidLicenseMismatchOS>Licensnyckeln är giltig men är inte avsedd att användas på %1.</invalidLicenseMismatchOS>
+        <thanksTitle>Tack för ditt köp av Macs Fan Control Pro</thanksTitle>
+        <thanksInfo>Alla begränsningar i gratisversionen har tagits bort, vi hoppas att du gillar att använda programmet!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Trial version</trialVersion>
+        <message>Thank you for trying %1</message>
+        <messageSecondary>The only app able to control fans on Intel-based Macs in Windows</messageSecondary>
+        <timeLeftDays>You have %1 days remaining of your trial period.</timeLeftDays>
+        <timeLeftHours>You have %1 hours remaining of your trial period.</timeLeftHours>
+        <trialOver>The trial of %1 days is over.</trialOver>
+        <buttonContinue>Continue Trial</buttonContinue>
+        <buttonActivate>Activate License</buttonActivate>
+        <buttonBuy>Buy Now</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>Öppna Macs Fan Control</itemShow>
+        <itemAvailableFans>Fläktar:</itemAvailableFans>
+        <itemFanPresets>Förinställningar för fläktar:</itemFanPresets>
+        <itemMoreLinks>Mer</itemMoreLinks>
+        <itemWebsite>Webbsida</itemWebsite>
+        <itemCheckForUpdates>Leta efter uppdateringar...</itemCheckForUpdates>
+        <itemTechInfoZip>Skapa zip fil för support...</itemTechInfoZip>
+        <itemRateApp>Betygsätt på MacUpdate</itemRateApp>
+        <itemFollowTwitter>Följ @crystalidea</itemFollowTwitter>
+        <itemUninstall>Avinstallera...</itemUninstall>
+        <itemExit>Stäng</itemExit>
+        <itemExitMac>Avsluta Macs Fan Control</itemExitMac>
+        <itemSensorBased>Sensorbaserad</itemSensorBased>
+        <itemUpgradeToPro>Uppgradera till Pro-versionen</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>Ett supportpaket '%1' bestående av anonym teknisk data och en skärmavbild av huvudfönstret skapas på ditt skrivbord.\n\nVar god skicka denna fil till support@crystalidea.com eller posta den i vår ärendehanterare på GitHub.</message>
+        <browseButton>Visa zip fil</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>Inställningar</title>
+        <TabGeneral>Generella</TabGeneral>
+        <tabTrayIcon>Meddelandefältsikon</tabTrayIcon>
+        <tabSensors>Sensorer</tabSensors>
+        <tabTrayIconMac>Menyradsikon</tabTrayIconMac>
+        <tabDiagnostics>Diagnostik</tabDiagnostics>
+        <staticLanguage>Språk:</staticLanguage>
+        <checkSystemStart>Autostarta minimerat med systemet (rekommenderat)</checkSystemStart>
+        <checkUpdatesOnStartup>Leta efter uppdateringar när programmet startar</checkUpdatesOnStartup>
+        <checkDockIcon>Visa ikon i dock</checkDockIcon>
+        <checkFahrenheit>Visa temperatur i Fahrenheit</checkFahrenheit>
+        <checkPrecise>Exakt visning av temperatur om möjligt (ex 45,4)</checkPrecise>
+        <labelSensors>Läs temperaturer från</labelSensors>
+        <checkExternalGPU>eGPU:er anslutna via Thunderbolt</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>Sensor:</staticSensor>
+        <staticFan>Fläkt:</staticFan>
+        <staticIcon>Ikon:</staticIcon>
+        <comboIconOptionShow>Visa</comboIconOptionShow>
+        <comboIconOptionShowBW>Visa (svart &amp; vit)</comboIconOptionShowBW>
+        <comboOptionNone>Ingen</comboOptionNone>
+        <checkTwoLines>Visa temperatur/hastighet på två rader för att spara utrymme</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(Endast Celsius)</staticCelsiusOnlyOnWindows>
+        <checkLog>Aktivera loggning (omstart krävs)</checkLog>
+        <browseLog>Bläddra</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>Om Macs Fan Control</title>
+        <staticTechnicalSupport>Teknisk support på forumet</staticTechnicalSupport>
+        <staticOnlineHelp>Online hjälp</staticOnlineHelp>
+        <staticFreeVersion>Gratisversion</staticFreeVersion>
+        <staticProVersion>Pro-version, %1 dator(er) licens</staticProVersion>
+        <staticWarning>PROGRAMMET VÄNDER SIG TILL AVANCERADE ANVÄNDARE SOM VET HUR MAN SKA ANVÄNDA DET UTAN ATT SKADA SIN MAC. SKAPARNA ÄR INTE ANSVARIGA FÖR DATAFÖRLUST, SKADOR, VINST/FÖRLUST ELLER ANDRA TYPER AV FÖRLUSTER I SAMBAND MED ANVÄNDNING ELLER MISSBRUK AV PROGRAMMET!</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>Betygsätt programmet på MacUpdate</message>
+        <informativeText>Om du uppskattar att använda %1, kan du då avvara en minut att betygsätta det? Tack för din support!</informativeText>
+        <buttonRate>Betygsätt på MacUpdate</buttonRate>
+        <buttonNoThanks>Nej tack</buttonNoThanks>
+        <checkDontShowAgain>Visa inte detta meddelande igen</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>Avinstallera Macs Fan Control?</title>
+        <message>Du håller på att totalt avinstallera appen från din mac, inklusive dess inställningar, hjälpprogrammet för fläktstyrningen och licensdata för Pro versionen. Alla ändringar av standardfläktstyrningen kommer att återställas och fläkt(en|arna) kommer att kontrolleras automatiskt av systemet. \n\nDu kan bli ombedd att auktorisera appen för att kunna avinstallera sig själv.</message>
+        <authorizeText>Vänligen auktorisera appen för att kunna avinstallera hjälpprogrammet för fläktstyrningen.</authorizeText>
+        <buttonUninstall>Avinstallera</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Fans disabled by hardware</title>
+        <message>Due to low temperatures, this Mac model has automatically disabled the fans. Manual fan control will take effect once the system reactivates them, when it determines that cooling is necessary.</message>
+        <checkDiscard>Do not show this message again</checkDiscard>
+        <buttonMoreInfo>More info...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>Stäng</buttonClose>
+        <buttonOK>OK</buttonOK>
+        <buttonCancel>Avbryt</buttonCancel>
+        <buttonContinue>Fortsätt</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>släppt den %1</ReleasedOn>
+            <CheckForUpdates>Leta efter uppdateringar...</CheckForUpdates>
+            <NewVersionAvailable>En ny version av %1 är tillgänglig!</NewVersionAvailable>
+            <NewVersionAvailableText>%1 %2 är nu tillgänglig - du har %3. Vill du ladda ned den nu?</NewVersionAvailableText>
+            <UpdateAlertTitle>Programuppdatering</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>Ändringsnoteringar:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>Påminn mig senare</UpdateAlertRemindLater>
+            <UpdateAlertSkip>Hoppa över denna version</UpdateAlertSkip>
+            <UpdateAlertInstall>Installera uppdatering</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>Leta efter uppdateringar automatiskt</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>Du är uppdaterad!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>%1 %2 är för närvarande den senaste tillgängliga versionen.</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>Fel uppstod vid nedladdning av uppdateringen. Var god försök igen senare.</MessageErrorConnect>
+            <MessageErrorParse>Fel uppstod vid uppdateringen.</MessageErrorParse>
+            <UpdateProgressTitle>Uppdaterar %1</UpdateProgressTitle>
+            <UpdateProgressCancel>Avbryt</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>Installera och starta om programmet</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>Laddar ned uppdatering...</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>Packar upp uppdatering...</UpdateProgressExtract>
+            <UpdateProgressStatusReady>Redo att installera</UpdateProgressStatusReady>
+            <UpdateProgressSize>%1 av %2</UpdateProgressSize>
+            <UpdateProgressB>B</UpdateProgressB>
+            <UpdateProgressKB>KB</UpdateProgressKB>
+            <UpdateProgressMB>MB</UpdateProgressMB>
+            <UpdateProgressGB>GB</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>Kunde inte flytta till program-mappen</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>Flytta till program-mappen</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>Flytta till program-mappen i din hem-mapp?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>Vill du att %1 flyttar sig själv till program-mappen?</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>Flytta till program-mappen</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>Flytta inte</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>Detta kräver ett administratörslösenord.</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>Detta kommer att hålla din nedladdningsmapp i bättre ordning.</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>Ångra</actionUndo>
+            <actionRedo>Gör om</actionRedo>
+            <actionCut>Klipp ut</actionCut>
+            <actionCopy>Kopiera</actionCopy>
+            <actionPaste>Klistra in</actionPaste>
+            <actionDelete>Radera</actionDelete>
+            <actionSelectAll>Välj alla</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>OK</buttonOK>
+            <buttonCancel>Avbryt</buttonCancel>
+            <buttonClose>Stäng</buttonClose>
+            <buttonYes>Ja</buttonYes>
+            <buttonNo>Nej</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

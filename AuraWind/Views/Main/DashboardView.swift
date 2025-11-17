@@ -63,7 +63,7 @@ struct DashboardView: View {
             // 风扇数量
             StatCard(
                 title: "风扇数量",
-                value: "\(fanViewModel.fans.count)",
+                value: String(fanViewModel.fans.count),
                 icon: "wind",
                 color: .auraSkyBlue
             )

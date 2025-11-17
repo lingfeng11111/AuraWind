@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.16" Author="majmohar.eu, updated based from Peter von Kartschowin, updated based on v1.1 by blazzavrsnik.com">
+    <MainWindow>
+        <staticSensorsListHeader>Senzorji temperature:</staticSensorsListHeader>
+        <listColumnFan>Ventilator</listColumnFan>
+        <listColumnRPM>Min./Trenutni/Maks. vrtljaji</listColumnRPM>
+        <listColumnControl>Upravljanje</listColumnControl>
+        <listColumnSensor>Senzor</listColumnSensor>
+        <listColumnSensorValue>Temp. v</listColumnSensorValue>
+        <listSeparatorDrives>Sistemski diski:</listSeparatorDrives>
+        <popupMenuItemControl>Nastavitev upravljanja …</popupMenuItemControl>
+        <popupMenuItemReset>Povrni na samodejno upravljanje</popupMenuItemReset>
+        <fanControlAutomatic>Samodejno</fanControlAutomatic>
+        <fanControlAutomaticInfo>Samodejno (upravlja sistem)</fanControlAutomaticInfo>
+        <fanControlConstant>Konstantna vrednost %1</fanControlConstant>
+        <fanControlSensor>Na osnovi %1</fanControlSensor>
+        <fanControlUnknown>Neznano!</fanControlUnknown>
+        <buttonFanControlCustom>Po meri …</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>Upravljanje po meri</buttonFanControlCustomInfo>
+        <buttonMinimize>Minimiziraj</buttonMinimize>
+        <buttonMinimizeMac>Skrij v menijsko vrstico</buttonMinimizeMac>
+        <buttonPreferences>Nastavitve …</buttonPreferences>
+        <buttonAbout>O …</buttonAbout>
+        <messageHelperToolInstall>Macs Fan Control zahteva pomočniško orodje za namestitev. Ta korak lahko preskočite, če želite samo spremljati hitrosti ventilatorjev in senzorje temperature.</messageHelperToolInstall>
+        <messageHelperToolUpgrade>Macs Fan Control potrebuje nameščeno posodobljeno različico pomočniškega orodja za upravljanje ventilatorjev.</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>Upravljanje ventilatorjev ni na voljo</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>Macs Fan Control se ni mogel povezati s pomočniškim orodjem, ki bi omogočilo upravljanje ventilatorjev in nastavljanje hitrosti. \n\nVnesite administratorjevo geslo, ko ste vprašani po njem.\n\nAplikacijo še vedno lahko uporabljate v načinu opazovanja.</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>Način opazovanja</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>Ventilatorji niso bili zaznani; poskusite [ponastaviti SMC](https://support.apple.com/en-euro/HT201295).</messageNoFansDetected>
+        <messageNoFansAvailable>Ta računalnik nima ventilatorjev in je ohlajan pasivno</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>Upravljanje ventilatorja „%1“</title>
+        <radioConstant>Stalno število vrtljajev</radioConstant>
+        <radioSensor>Število vrtljajev na osnovi senzorja</radioSensor>
+        <staticIncrease>Temperatura, pri kateri se hitrost ventilatorjev začne povečevati:</staticIncrease>
+        <staticMax>Najvišja temperatura:</staticMax>
+        <statusWarning>Nekaj je narobe – min./maks. vrednosti sta enaki (%1).&lt;br/&gt; Prosimo, odstranite vse druge programe za nadzor ventilatorjev in ponastavite SMC.</statusWarning>
+        <saveToCurrentPreset>Shrani trenutno prednastavitev („%1“)</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>Trenutna prednastavitev:</activePresetLabel>
+        <presetAutomatic>Samodejno</presetAutomatic>
+        <presetFullBlast>Polna moč</presetFullBlast>
+        <presetCurrentUnsaved>Po meri*</presetCurrentUnsaved>
+        <presetMenuSave>Shrani …</presetMenuSave>
+        <presetMenuRename>Preimenuj</presetMenuRename>
+        <presetMenuDelete>Izbriši</presetMenuDelete>
+        <presetMenuPredefined>Vnaprej določene prednastavitve:</presetMenuPredefined>
+        <presetMenuCustom>Prednastavitve po meri:</presetMenuCustom>
+        <presetMenuApply>Potrdi</presetMenuApply>
+        <presetMenuProVersion>Na voljo v PRO različici</presetMenuProVersion>
+        <presetMenuCurrent>Prednastavitev – %1</presetMenuCurrent>
+        <presetMenuDiscard>Zavrži (ponastavi vse ventilatorje na samodejno)</presetMenuDiscard>
+        <labelPresetName>Ime prednastavitve:</labelPresetName>
+        <savePresetTitle>Shrani prednastavitev po meri</savePresetTitle>
+        <editPresetTitle>Uredi ime prednastavitve</editPresetTitle>
+        <presetCreateNew>Novo …</presetCreateNew>
+        <presetCreateNewTitle>Ustvari novo prednastavitev</presetCreateNewTitle>
+        <presetCreateNewMessage>Trenutno so vsi ventilatorji upravljani s strani sistema. \n\nČe želite ustvariti novo prednastavitev, spremenite na upravljanje po meri za vsaj en ventilator.</presetCreateNewMessage>
+        <presetCreateNewMessage2>Prosim spremeni hitrost vsaj enega ventilatorja, ker se trenutno vsi vrtijo na maksimalni hitrosti, kar se ujema z '%1' prednastavitvijo.</presetCreateNewMessage2>
+        <presetCreateNewButton>Upravljanje po meri za ventilator „%1“</presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>Nadgradite na Macs Fan Control Pro</title>
+        <proInfo1>Pro različica omogoča ustvarjanje in shranjevanje prednastavitev ventilatorjev, da lahko hitro preklapljate med njimi, glede na potrebo.</proInfo1>
+        <proInfo2>Če ste Pro različico aplikacije že kupili, kliknite „Vnesi licenco“ spodaj.</proInfo2>
+        <buttonPurchase>Nadgradnja</buttonPurchase>
+        <buttonEnterLicense>Vnesi licenco</buttonEnterLicense>
+        <buttonLater>Kasneje</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>Odkleni Pro različico</title>
+        <infoText>Če ste Macs Fan Control že kupili, vnesite svojo elektronsko pošto in licenčni ključ, ki ste ga prejeli na računu, v polji spodaj. S tem boste odklenili Pro možnosti aplikacije Macs Fan Control.</infoText>
+        <licenseVerifyInfo>Vnešeni podatki so lahko preverjeni preko interneta.</licenseVerifyInfo>
+        <email>Elektronska pošta</email>
+        <licenseKey>Licenčni ključ</licenseKey>
+        <buttonUnlock>Odkleni</buttonUnlock>
+        <buttonRestoreLicense>Obnovi licenco</buttonRestoreLicense>
+        <invalidLicenseTitle>Napačen licenčni ključ!</invalidLicenseTitle>
+        <invalidLicenseText>Prepričajte se, da so vse črke, številke in pomišljaji vnešeni v pravilnem zaporedju. Če ključ pretipkavate, ga poskusite kopirati z računa, ki ste ga prejeli na elektronsko pošto, in prilepiti.</invalidLicenseText>
+        <invalidLicenseMismatchOS>Licenčni ključ je veljaven, a ni namenjen za uporabo v okviru %1.</invalidLicenseMismatchOS>
+        <thanksTitle>Zahvaljujemo se Vam za nakup Macs Fan Control Pro</thanksTitle>
+        <thanksInfo>Vse omejitve brezplačne različice so bile odstranjene. Upamo, da boste uživali ob uporabi!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Trial version</trialVersion>
+        <message>Thank you for trying %1</message>
+        <messageSecondary>The only app able to control fans on Intel-based Macs in Windows</messageSecondary>
+        <timeLeftDays>You have %1 days remaining of your trial period.</timeLeftDays>
+        <timeLeftHours>You have %1 hours remaining of your trial period.</timeLeftHours>
+        <trialOver>The trial of %1 days is over.</trialOver>
+        <buttonContinue>Continue Trial</buttonContinue>
+        <buttonActivate>Activate License</buttonActivate>
+        <buttonBuy>Buy Now</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>Prikaži Macs Fan Control</itemShow>
+        <itemAvailableFans>Ventilatorji:</itemAvailableFans>
+        <itemFanPresets>Ventilatorske prednastavitve:</itemFanPresets>
+        <itemMoreLinks>Več</itemMoreLinks>
+        <itemWebsite>Spletna stran</itemWebsite>
+        <itemCheckForUpdates>Preveri posodobitve …</itemCheckForUpdates>
+        <itemTechInfoZip>Naredi informacijsko zip datoteko...</itemTechInfoZip>
+        <itemRateApp>Oceni na Macupdate</itemRateApp>
+        <itemFollowTwitter>Sledi @crystalidea</itemFollowTwitter>
+        <itemUninstall>Odmesti...</itemUninstall>
+        <itemExit>Izhod</itemExit>
+        <itemExitMac>Zapri Macs Fan Control</itemExitMac>
+        <itemSensorBased>Senzor</itemSensorBased>
+        <itemUpgradeToPro>Nadgradi na Pro različico</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>Podporni paket '%1', ki vsebuje anonimne tehnične podatke in posnetek glavnega okna, je bil ustvarjen na vašem namizju.\n\nProsimo, pošljite to datoteko na support@crystalidea.com ali jo objavite v našem sistemu za sledenje težavam na GitHubu.</message>
+        <browseButton>Pokaži zip datoteko</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>Nastavitve</title>
+        <TabGeneral>Splošno</TabGeneral>
+        <tabTrayIcon>Ikona v opravilni vrstici</tabTrayIcon>
+        <tabSensors>Senzorji</tabSensors>
+        <tabTrayIconMac>Ikona v menijski vrstici</tabTrayIconMac>
+        <tabDiagnostics>Diagnoza</tabDiagnostics>
+        <staticLanguage>Jezik:</staticLanguage>
+        <checkSystemStart>Samodejno odpri minimizirano aplikacijo po zagonu sistema (priporočeno)</checkSystemStart>
+        <checkUpdatesOnStartup>Samodejno preveri, ali so na voljo posodobitve</checkUpdatesOnStartup>
+        <checkDockIcon>Pokaži aplikacijo v opravilni vrstici</checkDockIcon>
+        <checkFahrenheit>Uporabi Fahrenheitovo temperaturno lestvico</checkFahrenheit>
+        <checkPrecise>Natančen prikaz temperature, ko je to mogoče (npr. 45,4)</checkPrecise>
+        <labelSensors>Beri temperature od</labelSensors>
+        <checkExternalGPU>eGPUs povezani preko Thunderbolt povezave</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>Senzor:</staticSensor>
+        <staticFan>Ventilator:</staticFan>
+        <staticIcon>Ikona:</staticIcon>
+        <comboIconOptionShow> Barvna</comboIconOptionShow>
+        <comboIconOptionShowBW>Črno-bela</comboIconOptionShowBW>
+        <comboOptionNone>Brez</comboOptionNone>
+        <checkTwoLines>Prikaži temperaturo in hitrost ventilatorja v dveh vrsticah</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(samo °C)</staticCelsiusOnlyOnWindows>
+        <checkLog>Omogoči log (potreben ponovni zagon)</checkLog>
+        <browseLog>Išči</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>O Macs Fan Control</title>
+        <staticTechnicalSupport>Tehnična podpora na forumu</staticTechnicalSupport>
+        <staticOnlineHelp>Pomoč na spletu</staticOnlineHelp>
+        <staticFreeVersion>Brezplačna različica</staticFreeVersion>
+        <staticProVersion>Pro različica, licenca za %1 računalnik/a/ov</staticProVersion>
+        <staticWarning>TA APLIKACIJA JE ZA NAPREDNE UPORABNIKE, KI JO ZNAJO UPORABLJATI BREZ POVZROČITVE ŠKODE SVOJEMU MACU. NJENI AVTORJI NISO ODGOVORNI ZA MOREBITNO IZGUBO PODATKOV, POŠKODBE, IZGUBO DOBIČKA IN DRUGIH VRST IZGUB, POVEZANIH Z UPORABO ALI NEPRAVILNO UPORABO APLIKACIJE.</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>Oceni aplikacijo na MacUpdate</message>
+        <informativeText>Če ste zadovoljni z uporabo %1, bi vzeli trenutek, da ga ocenite? Ne bo Vam vzelo več kot minute. Hvala za podporo!</informativeText>
+        <buttonRate>Oceni on MacUpdate</buttonRate>
+        <buttonNoThanks>Ne, hvala</buttonNoThanks>
+        <checkDontShowAgain>Ne prikazuj več tega sporočila</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>Odmesti Macs Fan Control?</title>
+        <message>Zdaj boste popolnoma odstranili aplikacijo iz svojega Maca, vključno z njenimi nastavitvami, orodjem za pomoč pri ventilatorju in podatki o licenci za Pro različico. Vse spremembe nastavitev privzetega upravljanja ventilatorjev bodo razveljavljene, ventilator(ji) pa bo(bodo) deloval(i) samodejno, kot jih upravlja sistem. Morda boste morali dovoliti aplikaciji, da se lahko sama odstrani.</message>
+        <authorizeText>Prosim pooblastite aplikacijo, da lahko odmesti pomočnika.</authorizeText>
+        <buttonUninstall>Odmesti</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Fans disabled by hardware</title>
+        <message>Due to low temperatures, this Mac model has automatically disabled the fans. Manual fan control will take effect once the system reactivates them, when it determines that cooling is necessary.</message>
+        <checkDiscard>Do not show this message again</checkDiscard>
+        <buttonMoreInfo>More info...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>Zapri</buttonClose>
+        <buttonOK>V redu</buttonOK>
+        <buttonCancel>Prekliči</buttonCancel>
+        <buttonContinue>Nadaljuj</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>izdano dne %1</ReleasedOn>
+            <CheckForUpdates>Preveri posodobitve …</CheckForUpdates>
+            <NewVersionAvailable>Nova različica %1 je na voljo!</NewVersionAvailable>
+            <NewVersionAvailableText>%1 %2 je zdaj na voljo – nameščeno imate %3. Želite prenesti zdaj?</NewVersionAvailableText>
+            <UpdateAlertTitle>Posodobitev</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>Poročilo o izdaji:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>Opomni me kasneje</UpdateAlertRemindLater>
+            <UpdateAlertSkip>Preskoči to različico</UpdateAlertSkip>
+            <UpdateAlertInstall>Namesti posodobitev</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>Samodejno preveri posodobitve</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>Najnovejša različica je že nameščena!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>%1 %2 je trenutno najnovejša različica na voljo.</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>Med prenosom posodobitve je prišlo do napake. Prosimo, poskusite kasneje.</MessageErrorConnect>
+            <MessageErrorParse>Med analiziranjem vira posodobitev je prišlo do napake.</MessageErrorParse>
+            <UpdateProgressTitle>Posodabljam %1</UpdateProgressTitle>
+            <UpdateProgressCancel>Prekliči</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>Namesti in ponovno odpri</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>Prenašanje posodobitve …</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>Ekstrahiranje posodobitve …</UpdateProgressExtract>
+            <UpdateProgressStatusReady>Pripravljeno na namestitev</UpdateProgressStatusReady>
+            <UpdateProgressSize>%1 od %2</UpdateProgressSize>
+            <UpdateProgressB>B</UpdateProgressB>
+            <UpdateProgressKB>KB</UpdateProgressKB>
+            <UpdateProgressMB>MB</UpdateProgressMB>
+            <UpdateProgressGB>GB</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>Ni bilo mogoče premakniti v mapo „Aplikacije“</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>Premakni v „Aplikacije“</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>Premaknem v mapo „Aplikacije“ Vaše domače mape?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>Bi želeli, da se %1 premakne v mapo „Aplikacije“?</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>Premakni v mapo „Aplikacije“</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>Ne premakni</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>To dejanje bo zahtevalo administratorjevo geslo.</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>Na ta način boste ohranili mapo „Prenosi“ urejeno.</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>Razveljevi</actionUndo>
+            <actionRedo>Uveljavi</actionRedo>
+            <actionCut>Izreži</actionCut>
+            <actionCopy>Kopiraj</actionCopy>
+            <actionPaste>Pripeli</actionPaste>
+            <actionDelete>Izbriši</actionDelete>
+            <actionSelectAll>Izberi vse</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>V redu</buttonOK>
+            <buttonCancel>Prekliči</buttonCancel>
+            <buttonClose>Zapri</buttonClose>
+            <buttonYes>Da</buttonYes>
+            <buttonNo>Ne</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

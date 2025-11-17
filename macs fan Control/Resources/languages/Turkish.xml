@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageStrings version="1.5.16" Author="A. Mesut Konuklar, Mid0aria (github)">
+    <MainWindow>
+        <staticSensorsListHeader>Sıcaklık sensörleri:</staticSensorsListHeader>
+        <listColumnFan>Fan</listColumnFan>
+        <listColumnRPM>En Düşük/Anlık/En Yüksek Devir/Dakika</listColumnRPM>
+        <listColumnControl>Kontrol</listColumnControl>
+        <listColumnSensor>Sensör</listColumnSensor>
+        <listColumnSensorValue>Değer</listColumnSensorValue>
+        <listSeparatorDrives>Disk Sürücüleri:</listSeparatorDrives>
+        <popupMenuItemControl>Kontrolü değiştir...</popupMenuItemControl>
+        <popupMenuItemReset>Otomatik kontrole dön</popupMenuItemReset>
+        <fanControlAutomatic>Otomatik</fanControlAutomatic>
+        <fanControlAutomaticInfo>Otomatik (sistem tarafından kontrol)</fanControlAutomaticInfo>
+        <fanControlConstant>%1 için sabit değer</fanControlConstant>
+        <fanControlSensor>%1 değerine göre</fanControlSensor>
+        <fanControlUnknown>Bilinmeyen!</fanControlUnknown>
+        <buttonFanControlCustom>Özel...</buttonFanControlCustom>
+        <buttonFanControlCustomInfo>Özel bir kontrol modu tanımla</buttonFanControlCustomInfo>
+        <buttonMinimize>Küçült</buttonMinimize>
+        <buttonMinimizeMac>Menü çubuğuna gizle</buttonMinimizeMac>
+        <buttonPreferences>Tercihler...</buttonPreferences>
+        <buttonAbout>Hakkında...</buttonAbout>
+        <messageHelperToolInstall>Macs Fan Control tarafından fan kontrolü için yardımcı bir araç kurmaya ihtiyaç duyulmaktadır. Sadece fanları ve sıcaklık sensörünü izlemek için bu kurulumu atlayabilirsiniz.</messageHelperToolInstall>
+        <messageHelperToolUpgrade>Macs Fan Control tarafından fan kontrolü için kullanılan yardımcı aracın yeni bir sürümünün kurulmasına ihtiyaç duyulmaktadır.</messageHelperToolUpgrade>
+        <messageFanControlNotAvailableTitle>Fan kontrolü kullanılamaz</messageFanControlNotAvailableTitle>
+        <messageFanControlNotAvailable>Macs Fan Control fan kontrolünü açmak ve fan hızlarını ayarlamak için gerekli yardımcı uygulamaya bağlanamıyor. \n\nSorulduğunda yönetici hesap şifresini girdiğinize emin olun..\n\nUygulamayı sadece izleme modunda kullanmaya devam edebilirsiniz.</messageFanControlNotAvailable>
+        <messageFanControlNotAvailableButtonMonitoringOnly>Sadece İzleme Modu</messageFanControlNotAvailableButtonMonitoringOnly>
+        <messageNoFansDetected>Fan tespit edilemedi, lütfen [SMC'yi sıfırlamayı](https://support.apple.com/tr-tr/HT201295) deneyin</messageNoFansDetected>
+        <messageNoFansAvailable>Bu bilgisayarın hiç fanı yok ve pasif olarak soğutuluyor</messageNoFansAvailable>
+    </MainWindow>
+    <FanControlDialog>
+        <title>%1 için Fan kontrolünü değiştir</title>
+        <radioConstant>Sabit devir değeri</radioConstant>
+        <radioSensor>Sensör-bazlı değer</radioSensor>
+        <staticIncrease>Fan hızının artmaya başlayacağı sıcaklık:</staticIncrease>
+        <staticMax>En yüksek sıcaklık:</staticMax>
+        <statusWarning>Birşeyler yanlış - en düşük/en yüksek fan değerleri aynı (%1).&lt;br/&gt; Lütfen varsa başka fan kontrol yazılımını silin ve SMC'yi resetleyin.</statusWarning>
+        <saveToCurrentPreset>Şu anki ayara kaydet ('%1')</saveToCurrentPreset>
+    </FanControlDialog>
+    <Presets>
+        <activePresetLabel>Aktif ayar:</activePresetLabel>
+        <presetAutomatic>Otomatik</presetAutomatic>
+        <presetFullBlast>Tam Patlama</presetFullBlast>
+        <presetCurrentUnsaved>Özelleşmiş*</presetCurrentUnsaved>
+        <presetMenuSave>Kaydet...</presetMenuSave>
+        <presetMenuRename>Yeniden Adlandır</presetMenuRename>
+        <presetMenuDelete>Sil</presetMenuDelete>
+        <presetMenuPredefined>Öntanımlı ayarlar:</presetMenuPredefined>
+        <presetMenuCustom>Özel ayarlar:</presetMenuCustom>
+        <presetMenuApply>Uygula</presetMenuApply>
+        <presetMenuProVersion>Sadece PRO sürümünde kullanılabilir</presetMenuProVersion>
+        <presetMenuCurrent>Ayar - %1</presetMenuCurrent>
+        <presetMenuDiscard>Geri al (bütün fanları otomatiğe geri döndür)</presetMenuDiscard>
+        <labelPresetName>Ayar adı:</labelPresetName>
+        <savePresetTitle>Özel ayarı kaydet</savePresetTitle>
+        <editPresetTitle>Ayar adını düzenle</editPresetTitle>
+        <presetCreateNew>Yeni...</presetCreateNew>
+        <presetCreateNewTitle>Yeni bir ön ayar oluştur</presetCreateNewTitle>
+        <presetCreateNewMessage>Şu anda tüm fanlarınız sistem tarafından kontrol ediliyor. \n\nFanlarınızdan en az birinin ayarını özelleştirebilmek için lütfen kontrolü 'Özel' olarak değiştirin.</presetCreateNewMessage>
+        <presetCreateNewMessage2>Lütfen fanlarınızdan en az biri için kontrolü değiştirin, çünkü şu anda hepsi mevcut '%1' ön ayarıyla eşleşerek tam güçle dönüyor.</presetCreateNewMessage2>
+        <presetCreateNewButton>'%1' fanı için özel ayar</presetCreateNewButton>
+    </Presets>
+    <UpgradeToProDialog>
+        <title>Macs Fan Control Pro'ya yükselt</title>
+        <proInfo1>Pro sürümü, özel fan ön ayarları oluşturabilir ve kaydedebilir, böylece etkinliğinize bağlı olarak bunlar arasında hızla geçiş yapabilirsiniz.</proInfo1>
+        <proInfo2>Uygulamayı zaten satın aldıysanız, lütfen aşağıdaki 'Lisansı Girin' düğmesine basın.</proInfo2>
+        <buttonPurchase>Satın Al</buttonPurchase>
+        <buttonEnterLicense>Lisansı Girin</buttonEnterLicense>
+        <buttonLater>Sonra</buttonLater>
+    </UpgradeToProDialog>
+    <EnterLicenseDialog>
+        <title>Pro versiyonun kilidini aç</title>
+        <infoText>Macs Fan Control'ü zaten satın aldıysanız, e-posta makbuzunuzdan e-posta adresinizi ve lisans anahtarınızı aşağıdaki kutulara girin. Bu, Mac Fan Control'ün Pro özelliklerinin kilidini tamamen açacaktır.</infoText>
+        <licenseVerifyInfo>Girdiğiniz bilgiler İnternet üzerinden doğrulanabilir.</licenseVerifyInfo>
+        <email>Email adresi</email>
+        <licenseKey>Lisans anahtarı</licenseKey>
+        <buttonUnlock>Kilidi aç</buttonUnlock>
+        <buttonRestoreLicense>Lisansı kurtar</buttonRestoreLicense>
+        <invalidLicenseTitle>Geçersiz lisans!</invalidLicenseTitle>
+        <invalidLicenseText>Tüm harflerin, sayıların ve tirelerin doğru sırada girildiğinden emin olun. Numarayı elle yazıyorsanız, bunun yerine e-posta makbuzunuzdan kopyalayıp yapıştırmayı deneyin.</invalidLicenseText>
+        <invalidLicenseMismatchOS>Bu lisans anahtarı geçerlidir, ancak %1 üzerinde kullanılması amaçlanmamıştır.</invalidLicenseMismatchOS>
+        <thanksTitle>Macs Fan Control Pro'yu satın aldığınız için teşekkürler!</thanksTitle>
+        <thanksInfo>Ücretsiz sürümün tüm sınırlamaları kaldırıldı, uygulamayı kullanmaktan keyif alacağınızı umuyoruz!</thanksInfo>
+    </EnterLicenseDialog>
+    <TrialDialog>
+        <trialVersion>Trial version</trialVersion>
+        <message>Thank you for trying %1</message>
+        <messageSecondary>The only app able to control fans on Intel-based Macs in Windows</messageSecondary>
+        <timeLeftDays>You have %1 days remaining of your trial period.</timeLeftDays>
+        <timeLeftHours>You have %1 hours remaining of your trial period.</timeLeftHours>
+        <trialOver>The trial of %1 days is over.</trialOver>
+        <buttonContinue>Continue Trial</buttonContinue>
+        <buttonActivate>Activate License</buttonActivate>
+        <buttonBuy>Buy Now</buttonBuy>
+    </TrialDialog>
+    <TrayMenu>
+        <itemShow>Macs Fan Control'ü göster</itemShow>
+        <itemAvailableFans>Fanlar (kontrol etmek için çift tıklayın):</itemAvailableFans>
+        <itemFanPresets>Fan ön ayarları:</itemFanPresets>
+        <itemMoreLinks>Daha fazla</itemMoreLinks>
+        <itemWebsite>Web Sitesi</itemWebsite>
+        <itemCheckForUpdates>Güncellemeleri kontrol et...</itemCheckForUpdates>
+        <itemTechInfoZip>Teknik zip dosyası oluşturun...</itemTechInfoZip>
+        <itemRateApp>Macupdate'de değerlendir</itemRateApp>
+        <itemFollowTwitter>Takip et @crystalidea</itemFollowTwitter>
+        <itemUninstall>Kaldır...</itemUninstall>
+        <itemExit>Çıkış</itemExit>
+        <itemExitMac>Macs Fan Control'ü kapat</itemExitMac>
+        <itemSensorBased>Sensör tabanlı</itemSensorBased>
+        <itemUpgradeToPro>Pro sürüme yükselt</itemUpgradeToPro>
+    </TrayMenu>
+    <techInfoZipMessage>
+        <message>Masaüstünüzde anonim teknik veriler ve ana pencere ekran görüntüsünden oluşan bir destek paketi '%1' oluşturuldu.\n\nLütfen bu dosyayı support@crystalidea.com adresine gönderin veya GitHub Sorun İzleyicimize gönderin.</message>
+        <browseButton>Zip dosyasını göster</browseButton>
+    </techInfoZipMessage>
+    <PreferencesWindow>
+        <title>Tercihler</title>
+        <TabGeneral>Genel</TabGeneral>
+        <tabTrayIcon>Tepsi ikonu</tabTrayIcon>
+        <tabSensors>Sensörler</tabSensors>
+        <tabTrayIconMac>Menü Çubuğu gösterimi</tabTrayIconMac>
+        <tabDiagnostics>Tanılama</tabDiagnostics>
+        <staticLanguage>Dil:</staticLanguage>
+        <checkSystemStart>Sistemle birlikte otomatik olarak başlat (önerilen)</checkSystemStart>
+        <checkUpdatesOnStartup>Uygulama başladığında güncellemeleri kontrol et</checkUpdatesOnStartup>
+        <checkDockIcon>Dock'ta simgeyi göster</checkDockIcon>
+        <checkFahrenheit>Fahrenheit sıcaklık ölçeğini kullan</checkFahrenheit>
+        <checkPrecise>Mümkün olduğunda sıcaklığın hassas değerini göster (örn 45.4)</checkPrecise>
+        <labelSensors>Sıcaklıklarını oku</labelSensors>
+        <checkExternalGPU>Thunderbolt ile bağlı eGPU</checkExternalGPU>
+        <checkDrives>Connected NVMe/SATA drives</checkDrives>
+        <checkDrivesExternal>Including external drives</checkDrivesExternal>
+        <staticSensor>Sensör:</staticSensor>
+        <staticFan>Fan:</staticFan>
+        <staticIcon>İkon:</staticIcon>
+        <comboIconOptionShow>Göster</comboIconOptionShow>
+        <comboIconOptionShowBW>Göster (siyah &amp; beyaz)</comboIconOptionShowBW>
+        <comboOptionNone>Yok</comboOptionNone>
+        <checkTwoLines>Fan/sensör okumalarını yerden tasarruf için iki satırda göster</checkTwoLines>
+        <staticCelsiusOnlyOnWindows>(sadece Santigrat)</staticCelsiusOnlyOnWindows>
+        <checkLog>Günlüğü etkinleştirin (yeniden başlatmak gerekmekte)</checkLog>
+        <browseLog>Gözat...</browseLog>
+    </PreferencesWindow>
+    <AboutDialog>
+        <title>Macs Fan Control Hakkında</title>
+        <staticTechnicalSupport>Forum aracılığıyla teknik destek</staticTechnicalSupport>
+        <staticOnlineHelp>Çevrimiçi yardım</staticOnlineHelp>
+        <staticFreeVersion>Ücretsiz sürüm</staticFreeVersion>
+        <staticProVersion>Pro sürümü, %1 bilgisayar(lar) lisansı</staticProVersion>
+        <staticWarning>BU PROGRAM MACLERİNE ZARAR VERMEDEN KULLANABİLEN İLERİ SEVİYE KULLANICILAR İÇİNDİR. PROGRAMIN YAZARLARI KULLANICI TARAFINDAN VEYA PROGRAMIN YANLIŞ KULLANIMI SONUCU OLUŞAN HERHANGİ BİR DATA KAYBI, ZARAR, KAR KAYBI YA DA HERHANGİ BİR TÜRDEN KAYIPLAR İÇİN SORUMLU DEĞİLDİR.</staticWarning>
+    </AboutDialog>
+    <RateMeDialog>
+        <message>Uygulamayı MacUpdate'de değerlendir</message>
+        <informativeText>Eğer %1 'i kullanmayı sevdiyseniz, kısa bir süre ayırarak bizi değerlendirmek ister misiniz? Bir dakikadan daha az zamanınızı alacaktır. Desteğiniz için teşekkürler!</informativeText>
+        <buttonRate>MacUpdate'de değerlendir</buttonRate>
+        <buttonNoThanks>Hayır, teşekkürler</buttonNoThanks>
+        <checkDontShowAgain>Bu mesajı bir daha gösterme</checkDontShowAgain>
+    </RateMeDialog>
+    <UninstallDialog>
+        <title>Macs Fan Control kaldırılsın mı?</title>
+        <message>Tercihleri, fan yardımcı aracı ve Pro sürümü için lisans verileri dahil olmak üzere uygulamayı mac'inizden tamamen kaldırmak üzeresiniz. Varsayılan fan kontrolünde yapılan tüm değişiklikler geri alınacak ve fan(lar) sistem tarafından otomatik olarak kontrol edilecektir. \n\nUygulamanın kendisini kaldırabilmesi için yetkilendirmeniz istenebilir.</message>
+        <authorizeText>Fan yardımcısı aracını kaldırabilmek için lütfen uygulamayı yetkilendirin.</authorizeText>
+        <buttonUninstall>Kaldır</buttonUninstall>
+    </UninstallDialog>
+    <messageFanControlLimited>
+        <title>Fans disabled by hardware</title>
+        <message>Due to low temperatures, this Mac model has automatically disabled the fans. Manual fan control will take effect once the system reactivates them, when it determines that cooling is necessary.</message>
+        <checkDiscard>Do not show this message again</checkDiscard>
+        <buttonMoreInfo>More info...</buttonMoreInfo>
+    </messageFanControlLimited>
+    <Common>
+        <buttonClose>Kapat</buttonClose>
+        <buttonOK>Tamam</buttonOK>
+        <buttonCancel>İptal</buttonCancel>
+        <buttonContinue>Devam</buttonContinue>
+    </Common>
+    <core>
+        <UpdateChecker>
+            <ReleasedOn>%1 tarihinde yayınlandı</ReleasedOn>
+            <CheckForUpdates>Güncellemeleri kontrol et...</CheckForUpdates>
+            <NewVersionAvailable>%1' nun yeni sürümü mevcut!</NewVersionAvailable>
+            <NewVersionAvailableText>%1 %2 şu an mevcut - sizde mevcut olan %3. Şimdi indirmek ister misiniz?</NewVersionAvailableText>
+            <UpdateAlertTitle>Yazılım Güncelleme</UpdateAlertTitle>
+            <UpdateAlertReleaseNotes>Sürüm Notları:</UpdateAlertReleaseNotes>
+            <UpdateAlertRemindLater>Sonra Hatırlat</UpdateAlertRemindLater>
+            <UpdateAlertSkip>Bu Versiyonu Atla</UpdateAlertSkip>
+            <UpdateAlertInstall>Güncellemeyi Yükle</UpdateAlertInstall>
+            <UpdateAlertAutomaticUpdates>Güncellemeleri otomatik denetle</UpdateAlertAutomaticUpdates>
+            <MessageNoUpdateAvailable>Güncel Sürümdesiniz!</MessageNoUpdateAvailable>
+            <MessageNoUpdateAvailableDescription>%1 %2 mevcut olan en yeni sürümdür.</MessageNoUpdateAvailableDescription>
+            <MessageErrorConnect>Güncellemeyi indirirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</MessageErrorConnect>
+            <MessageErrorParse>Güncelleştirme bilgisini alırken bir hata meydana geldi.</MessageErrorParse>
+            <UpdateProgressTitle>Güncelleniyor %1</UpdateProgressTitle>
+            <UpdateProgressCancel>İptal</UpdateProgressCancel>
+            <UpdateProgressInstallAndRelaunch>Yükleyin ve Yeniden Başlatın</UpdateProgressInstallAndRelaunch>
+            <UpdateProgressStatusDownloading>Güncelleme indiriliyor...</UpdateProgressStatusDownloading>
+            <UpdateProgressExtract>Güncelleme genişletiliyor...</UpdateProgressExtract>
+            <UpdateProgressStatusReady>Yüklemeye Hazır</UpdateProgressStatusReady>
+            <UpdateProgressSize>%2 nin %1 i</UpdateProgressSize>
+            <UpdateProgressB>B</UpdateProgressB>
+            <UpdateProgressKB>KB</UpdateProgressKB>
+            <UpdateProgressMB>MB</UpdateProgressMB>
+            <UpdateProgressGB>GB</UpdateProgressGB>
+        </UpdateChecker>
+        <LetsMoveMac>
+            <kStrMoveApplicationCouldNotMove>Uygulamalar klasörüne taşınamadı</kStrMoveApplicationCouldNotMove>
+            <kStrMoveApplicationQuestionTitle>Uygulamalara Taşı</kStrMoveApplicationQuestionTitle>
+            <kStrMoveApplicationQuestionTitleHome>Giriş klasörünüzdeki Uygulamalar klasörüne taşınsın mı?</kStrMoveApplicationQuestionTitleHome>
+            <kStrMoveApplicationQuestionMessage>%1' nun kendini Uygulamalar klasörüne taşımasını ister misiniz?</kStrMoveApplicationQuestionMessage>
+            <kStrMoveApplicationButtonMove>Uygulamalar Klasörüne Taşı</kStrMoveApplicationButtonMove>
+            <kStrMoveApplicationButtonDoNotMove>Taşıma</kStrMoveApplicationButtonDoNotMove>
+            <kStrMoveApplicationQuestionInfoWillRequirePasswd>Bu işlem için yönetici parolası istenecek.</kStrMoveApplicationQuestionInfoWillRequirePasswd>
+            <kStrMoveApplicationQuestionInfoInDownloadsFolder>Bu işlem İndirmeler klasörünü düzenli tutar.</kStrMoveApplicationQuestionInfoInDownloadsFolder>
+        </LetsMoveMac>
+        <QLineEditEx>
+            <actionUndo>Geri Al</actionUndo>
+            <actionRedo>Yeniden Yap</actionRedo>
+            <actionCut>Kes</actionCut>
+            <actionCopy>Kopyala</actionCopy>
+            <actionPaste>Yapıştır</actionPaste>
+            <actionDelete>Sil</actionDelete>
+            <actionSelectAll>Hepsini Seç</actionSelectAll>
+        </QLineEditEx>
+        <QMessageBoxEx>
+            <buttonOK>Tamam</buttonOK>
+            <buttonCancel>İptal</buttonCancel>
+            <buttonClose>Kapat</buttonClose>
+            <buttonYes>Evet</buttonYes>
+            <buttonNo>Hayır</buttonNo>
+        </QMessageBoxEx>
+    </core>
+</LanguageStrings>

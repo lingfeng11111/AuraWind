@@ -3,6 +3,7 @@
 //  AuraWind
 //
 //  Created by AuraWind Team on 2025-11-16.
+//  Updated: 2025-11-17 - Added ChartDataPoint support
 //
 
 import Foundation
@@ -30,6 +31,20 @@ final class TemperatureMonitorViewModel: BaseViewModel {
     /// 历史数据保留时长(秒)
     @Published var historyDuration: TimeInterval = 3600 // 默认1小时
     
+    // MARK: - Chart Data Properties
+    
+    /// 图表数据点集合
+    @Published private(set) var chartData: [ChartDataPoint] = []
+    
+    /// 当前选中的时间范围
+    @Published var selectedTimeRange: ChartDataPoint.TimeRange = .oneHour
+    
+    /// 选中的传感器标签（用于图表过滤）
+    @Published var selectedSensorLabels: Set<String> = []
+    
+    /// 数据标注管理器
+    @Published private(set) var annotationManager: DataAnnotationManager
+    
     // MARK: - Dependencies
     
     private let smcService: SMCServiceProtocol
@@ -46,14 +61,19 @@ final class TemperatureMonitorViewModel: BaseViewModel {
     /// 最大历史记录数
     private let maxHistoryCount: Int = 1800 // 1小时 * 3600秒 / 2秒
     
+    /// 最大图表数据点数
+    private let maxChartDataPoints: Int = 3000 // 支持更长时间的数据展示
+    
     // MARK: - Initialization
     
     init(
         smcService: SMCServiceProtocol,
-        persistenceService: PersistenceServiceProtocol
+        persistenceService: PersistenceServiceProtocol,
+        annotationManager: DataAnnotationManager? = nil
     ) {
         self.smcService = smcService
         self.persistenceService = persistenceService
+        self.annotationManager = annotationManager ?? DataAnnotationManager()
         super.init()
         
         setupBindings()
@@ -113,12 +133,24 @@ final class TemperatureMonitorViewModel: BaseViewModel {
                 )
                 self.sensors[index].addReading(reading)
                 
+                // 添加到图表数据
+                let chartPoint = ChartDataPoint(
+                    timestamp: reading.timestamp,
+                    value: temp,
+                    label: sensor.name,
+                    type: .temperature
+                )
+                self.addChartDataPoint(chartPoint)
+                
                 // 限制历史记录数量
                 self.limitHistorySize(sensorIndex: index)
             }
             
             // 检查是否需要显示警告
             self.checkTemperatureWarning()
+            
+            // 自动检测数据标注
+            self.autoDetectAnnotations()
         }
     }
     
@@ -182,6 +214,7 @@ final class TemperatureMonitorViewModel: BaseViewModel {
     /// - Returns: 平均温度(°C)
     func getAverageTemperature(duration: TimeInterval = 60) -> Double {
         let historicalData = getHistoricalData(duration: duration)
+        guard !historicalData.isEmpty else { return 0 }
         
         let allTemps = historicalData.flatMap { sensor in
             sensor.readings.map { $0.value }
@@ -195,13 +228,91 @@ final class TemperatureMonitorViewModel: BaseViewModel {
     /// 获取最高温度
     /// - Returns: 最高温度(°C)
     func getMaxTemperature() -> Double {
-        sensors.map { $0.currentTemperature }.max() ?? 0
+        guard !sensors.isEmpty else { return 0 }
+        let temps = sensors.map { $0.currentTemperature }
+        guard !temps.isEmpty else { return 0 }
+        return temps.max() ?? 0
     }
     
     /// 获取最低温度
     /// - Returns: 最低温度(°C)
     func getMinTemperature() -> Double {
-        sensors.map { $0.currentTemperature }.min() ?? 0
+        guard !sensors.isEmpty else { return 0 }
+        let temps = sensors.map { $0.currentTemperature }
+        guard !temps.isEmpty else { return 0 }
+        return temps.min() ?? 0
+    }
+    
+    // MARK: - Chart Data Methods
+    
+    /// 获取指定时间范围的图表数据
+    /// - Parameter range: 时间范围
+    /// - Returns: 过滤后的图表数据点
+    func getChartData(for range: ChartDataPoint.TimeRange) -> [ChartDataPoint] {
+        chartData.filtered(by: range)
+    }
+    
+    /// 获取指定传感器的图表数据
+    /// - Parameters:
+    ///   - sensorLabels: 传感器标签集合
+    ///   - range: 时间范围
+    /// - Returns: 过滤后的图表数据点
+    func getChartData(
+        for sensorLabels: Set<String>,
+        in range: ChartDataPoint.TimeRange
+    ) -> [ChartDataPoint] {
+        let rangeFiltered = chartData.filtered(by: range)
+        if sensorLabels.isEmpty {
+            return rangeFiltered
+        }
+        return rangeFiltered.filter { sensorLabels.contains($0.label) }
+    }
+    
+    /// 获取当前选中范围的图表数据
+    /// - Returns: 图表数据点数组
+    func getCurrentChartData() -> [ChartDataPoint] {
+        getChartData(for: selectedSensorLabels, in: selectedTimeRange)
+    }
+    
+    /// 获取所有可用的传感器标签
+    /// - Returns: 传感器标签数组
+    func getAvailableSensorLabels() -> [String] {
+        chartData.uniqueLabels
+    }
+    
+    /// 切换传感器选择状态
+    /// - Parameter label: 传感器标签
+    func toggleSensorSelection(_ label: String) {
+        if selectedSensorLabels.contains(label) {
+            selectedSensorLabels.remove(label)
+        } else {
+            selectedSensorLabels.insert(label)
+        }
+    }
+    
+    /// 选择所有传感器
+    func selectAllSensors() {
+        selectedSensorLabels = Set(getAvailableSensorLabels())
+    }
+    
+    /// 取消选择所有传感器
+    func deselectAllSensors() {
+        selectedSensorLabels.removeAll()
+    }
+    
+    /// 获取指定标签的统计信息
+    /// - Parameters:
+    ///   - label: 传感器标签
+    ///   - range: 时间范围
+    /// - Returns: (平均值, 最大值, 最小值)
+    func getStatistics(
+        for label: String,
+        in range: ChartDataPoint.TimeRange
+    ) -> (average: Double?, max: Double?, min: Double?) {
+        let average = chartData.average(for: label, in: range)
+        let max = chartData.maximum(for: label, in: range)
+        let min = chartData.minimum(for: label, in: range)
+        return (average, max, min)
     }
     
     // MARK: - Private Methods
@@ -224,6 +335,13 @@ final class TemperatureMonitorViewModel: BaseViewModel {
                 self?.saveSettings()
             }
             .store(in: &cancellables)
+        
+        // 监控时间范围变化
+        $selectedTimeRange
+            .sink { [weak self] _ in
+                self?.saveSettings()
+            }
+            .store(in: &cancellables)
     }
     
     /// 加载设置
@@ -241,12 +359,31 @@ final class TemperatureMonitorViewModel: BaseViewModel {
         ) {
             historyDuration = duration
         }
+        
+        if let rangeRaw: String = try? persistenceService.load(
+            String.self,
+            forKey: "selectedTimeRange"
+        ), let range = ChartDataPoint.TimeRange(rawValue: rangeRaw) {
+            selectedTimeRange = range
+        }
     }
     
     /// 保存设置
     private func saveSettings() {
         try? persistenceService.save(warningThreshold, forKey: "temperatureWarningThreshold")
         try? persistenceService.save(historyDuration, forKey: "temperatureHistoryDuration")
+        try? persistenceService.save(selectedTimeRange.rawValue, forKey: "selectedTimeRange")
+    }
+    
+    /// 添加图表数据点
+    private func addChartDataPoint(_ point: ChartDataPoint) {
+        chartData.append(point)
+        
+        // 限制图表数据点数量
+        if chartData.count > maxChartDataPoints {
+            let data = chartData
+            chartData = Array(data.suffix(maxChartDataPoints))
+        }
     }
     
     /// 监控温度
@@ -265,10 +402,8 @@ final class TemperatureMonitorViewModel: BaseViewModel {
         
         if sensors[sensorIndex].readings.count > maxHistoryCount {
             // 保留最新的记录
-            let startIndex = sensors[sensorIndex].readings.count - maxHistoryCount
-            sensors[sensorIndex].readings = Array(
-                sensors[sensorIndex].readings.suffix(maxHistoryCount)
-            )
+            let readings = sensors[sensorIndex].readings
+            sensors[sensorIndex].readings = Array(readings.suffix(maxHistoryCount))
         }
     }
     
@@ -303,6 +438,49 @@ final class TemperatureMonitorViewModel: BaseViewModel {
         }
         
         return csv
+    }
+    
+    // MARK: - Data Annotation Methods
+    
+    /// 自动检测数据标注
+    private func autoDetectAnnotations() {
+        let currentData = getCurrentChartData()
+        guard !currentData.isEmpty else { return }
+        
+        annotationManager.autoDetectAnnotations(for: currentData, type: .temperature)
+    }
+    
+    /// 获取当前可见的标注
+    func getVisibleAnnotations() -> [DataAnnotation] {
+        return annotationManager.visibleAnnotations
+    }
+    
+    /// 添加自定义标注
+    func addCustomAnnotation(
+        timestamp: Date,
+        sensorLabel: String,
+        type: AnnotationType,
+        value: Double?,
+        description: String?
+    ) {
+        let annotation = DataAnnotation(
+            timestamp: timestamp,
+            dataLabel: sensorLabel,
+            type: type,
+            value: value,
+            description: description
+        )
+        annotationManager.addAnnotation(annotation)
+    }
+    
+    /// 清除所有标注
+    func clearAllAnnotations() {
+        annotationManager.clearAllAnnotations()
+    }
+    
+    /// 切换自动标注功能
+    func toggleAutoAnnotation() {
+        annotationManager.isAutoAnnotationEnabled.toggle()
     }
 }
 
