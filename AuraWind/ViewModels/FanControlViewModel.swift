@@ -44,8 +44,8 @@ final class FanControlViewModel: BaseViewModel {
     /// 风扇控制模式
     enum FanMode: String, Codable, CaseIterable {
         case manual = "手动"
-        case silent = "静音"
-        case balanced = "平衡"
+        case silent = "自动"
+        case balanced = "静音"
         case performance = "性能"
         
         var description: String {
@@ -152,7 +152,9 @@ final class FanControlViewModel: BaseViewModel {
             // 手动模式不做自动温控调整
             activeCurveProfile = nil
         case .silent:
-            await applyPresetMode(CurveProfile.silent)
+            // 自动模式：交还系统控制，不再下发曲线目标转速。
+            activeCurveProfile = nil
+            await releaseAllFansToAutoMode()
         case .balanced:
             await applyPresetMode(CurveProfile.balanced)
         case .performance:
@@ -165,7 +167,7 @@ final class FanControlViewModel: BaseViewModel {
         saveSettings()
     }
     
-    /// 应用曲线配置（从设置页调用时默认映射到平衡模式）
+    /// 应用曲线配置（从设置页调用时默认映射到静音模式）
     /// - Parameter profile: 曲线配置
     func applyCurveProfile(_ profile: CurveProfile) async {
         activeCurveProfile = profile
@@ -296,9 +298,19 @@ final class FanControlViewModel: BaseViewModel {
         if let modeString: String = try? persistenceService.load(String.self, forKey: "fanControlMode") {
             if let mode = FanMode(rawValue: modeString) {
                 currentMode = mode
-            } else if modeString == "自动" || modeString == "曲线" {
-                // 兼容旧版本模式值，统一迁移到平衡模式。
-                currentMode = .balanced
+            } else {
+                switch modeString {
+                case "平衡", "曲线":
+                    // 旧版“平衡/曲线”统一迁移到当前静音模式（原平衡逻辑）。
+                    currentMode = .balanced
+                case "静音":
+                    // 旧版静音本质也是温控曲线，迁移到当前静音模式（原平衡逻辑）。
+                    currentMode = .balanced
+                case "自动":
+                    currentMode = .silent
+                default:
+                    break
+                }
             }
         }
         
@@ -310,13 +322,14 @@ final class FanControlViewModel: BaseViewModel {
 
         if activeCurveProfile == nil {
             switch currentMode {
-            case .silent:
-                activeCurveProfile = .silent
             case .balanced:
                 activeCurveProfile = .balanced
-            case .manual, .performance:
+            case .manual, .silent, .performance:
                 break
             }
+        } else if currentMode == .silent {
+            // 自动模式不应携带任何温控曲线。
+            activeCurveProfile = nil
         }
     }
     
@@ -347,7 +360,7 @@ final class FanControlViewModel: BaseViewModel {
             // 根据当前控制模式持续校正风扇转速
             if currentMode == .performance {
                 await applyMaxPerformanceMode()
-            } else if [.silent, .balanced].contains(currentMode) {
+            } else if currentMode == .balanced {
                 await updateFansBasedOnCurve()
             }
             

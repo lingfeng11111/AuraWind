@@ -358,8 +358,8 @@ struct MenuBarView: View {
             
             VStack(spacing: 4) {
                 manualModeCard("手动模式", "1", "hand.raised.fill")
-                modeButton("静音模式", .silent, "2", "speaker.wave.1")
-                modeButton("平衡模式", .balanced, "3", "scale.3d")
+                modeButton("自动模式", .silent, "2", "arrow.triangle.2.circlepath")
+                modeButton("静音模式", .balanced, "3", "speaker.wave.1")
                 modeButton("性能模式", .performance, "4", "bolt.fill")
             }
             .padding(.horizontal, 12)
